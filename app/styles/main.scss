@@ -93,8 +93,19 @@ body {
 }
 
 .index_pic {
-  background: url(../images/index.jpg) no-repeat center center;
+  background: url(../images/1andes.jpg) no-repeat center center;
   background-size: cover;
   margin-top: -20px;
   padding: 270px 0;
 }
+
+#container1 { 
+height: 240px; 
+display: table;/*让元素以表格形式渲染*/ 
+} 
+
+#content { 
+display:table-cell;/*让元素以表格的单元素格形式渲染*/ 
+vertical-align: middle;/*使用元素的垂直对齐*/ 
+}   
+
