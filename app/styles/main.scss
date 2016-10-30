@@ -98,6 +98,7 @@ body {
 
 $nav_line: #ddd;
 $nav_hover: #563d7c;
+$nav_line_width: 3px;
 
 
 a:link, a:visited, a:hover, a:active {
@@ -121,8 +122,8 @@ header {
 
 #nav_left_box {
   background-color: #563d7c;
-  width: 70px;
-  height: 100px;
+  width: 80px;
+  height: 120px;
   position: absolute;
   left: 50px;
 }
@@ -145,18 +146,18 @@ nav {
     li {
       list-style-type: none;
       display: inline-block;
-      border-bottom: $nav_line 2px solid;
+      border-bottom: $nav_line $nav_line_width solid;
       font-size: 20px;
-      padding: 0 10px;
+      padding: 10px;
 
       a {
         color: black;
-        border-bottom: $nav_line 2px solid;
+        border-bottom: $nav_line $nav_line_width solid;
         font-size: 20px;
-        padding: 3px 0;
+        padding: 13px 0;
       }
       a:hover {
-        border-bottom: $nav_hover 2px solid;
+        border-bottom: $nav_hover $nav_line_width solid;
       }
     }
   }

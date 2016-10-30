@@ -10,7 +10,7 @@
 
 var img = document.getElementById("index_img");
 var nav_img = document.getElementById("nav_right_img");
-var nav_height = $('ul').outerHeight();
+var nav_height = $('nav').outerHeight();
 nav_img.children[0].style.height = nav_height + "px";
 nav_height += 10;
 
