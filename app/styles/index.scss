@@ -33,3 +33,38 @@ p#new_prj {
     }
   }
 }
+
+.middle {
+  width: 100%;
+  background: url("../images/1.jpg") no-repeat center center;
+  margin-top: 40px;
+  text-align: center;
+  .middle_text {
+    color: white;
+    padding-top: 20px;
+    #quot {
+      margin: 0;
+      color: #8000bb;
+      font-size: 50px;
+    }
+    span {
+      color: #8000bb;
+    }
+  }
+  padding-bottom: 50px;
+}
+
+.md_next {
+  background: #eee;
+  padding-top: 100px;
+
+  #saepa {
+    font-size: 60px;
+    color: $content-color;
+    font-weight: bold;
+  }
+  #saepaer {
+    font-size: 65px;
+    color: $content-color;
+  }
+}
