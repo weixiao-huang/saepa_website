@@ -1,0 +1,35 @@
+
+$content-color: #563d7c;
+
+.container {
+  padding: 0 5%;
+}
+
+.title {
+  font-size: 25px;
+  color: $content-color;
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 10px;
+}
+
+p#new_prj {
+  text-align: center;
+}
+
+.icon_group {
+  margin-top: 100px;
+  color: $content-color;
+  text-align: center;
+
+  img {
+    width: 55%;
+  }
+  .icon_text {
+    padding-top: 20px;
+    p {
+      padding: 2px;
+      margin: 0;
+    }
+  }
+}
