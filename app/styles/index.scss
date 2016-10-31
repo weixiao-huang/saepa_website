@@ -1,8 +1,26 @@
 
 $content-color: #592a7a;
 
+@font-face {
+  font-family: Yahei;
+  src: url("../fonts/msyh.ttf");
+}
+$default_font: "微软雅黑";
+
+@font-face {
+  font-family: HelveticaLight;
+  src: url("../fonts/Helvetica CE Regular.ttf");
+}
+
 .container {
   padding: 0 5%;
+}
+
+.cn_fonts {
+  font-family: $default_font, Yahei, serif;
+}
+.en_fonts {
+  font-family: HelveticaLight, sans-serif;
 }
 
 .title {

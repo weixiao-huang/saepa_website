@@ -93,6 +93,13 @@ body {
   }
 }
 
+
+@font-face {
+  font-family: Yahei;
+  src: url(../fonts/msyh.ttf);
+}
+$default_font: "微软雅黑";
+
 $nav_line: #cecccd;
 $nav_hover: #572a7b;
 $nav_line_width: 3px;
@@ -137,7 +144,7 @@ nav {
   padding:0;
   background-color: rgba(255, 255, 255, 1);
   ul {
-    //font-family: "微软雅黑 Light";
+    font-family: $default_font, Yahei, serif;
     text-align: center;
     font-size: 0;
     padding: 20px;
@@ -152,7 +159,7 @@ nav {
         color: black;
         border-bottom: $nav_line $nav_line_width solid;
         font-size: 20px;
-        padding: 13px 0;
+        padding: 11px 0;
       }
       a:hover {
         border-bottom: $nav_hover $nav_line_width solid;
