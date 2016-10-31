@@ -93,11 +93,8 @@ body {
   }
 }
 
-
-
-
-$nav_line: #ddd;
-$nav_hover: #563d7c;
+$nav_line: #cecccd;
+$nav_hover: #572a7b;
 $nav_line_width: 3px;
 
 
@@ -140,6 +137,7 @@ nav {
   padding:0;
   background-color: rgba(255, 255, 255, 1);
   ul {
+    //font-family: "微软雅黑 Light";
     text-align: center;
     font-size: 0;
     padding: 20px;
@@ -158,6 +156,7 @@ nav {
       }
       a:hover {
         border-bottom: $nav_hover $nav_line_width solid;
+        color: black;
       }
     }
   }
