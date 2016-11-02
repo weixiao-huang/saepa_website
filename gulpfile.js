@@ -5,8 +5,19 @@ const browserSync = require('browser-sync');
 const del = require('del');
 const wiredep = require('wiredep').stream;
 
+const swig = require('gulp-swig');
+
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
+
+gulp.task('templates', () => {
+  return gulp.src('app/*.html')
+    .pipe(swig({default: { cache: false }}))
+    .pipe(gulp.dest('.tmp'))
+    .pipe(browserSync.stream());
+});
+
+gulp.task('templates-reload', ['templates'], browserSync.reload);
 
 gulp.task('styles', () => {
   return gulp.src('app/styles/*.scss')
@@ -96,7 +107,7 @@ gulp.task('extras', () => {
 
 gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
 
-gulp.task('serve', ['styles', 'scripts', 'fonts'], () => {
+gulp.task('serve', ['templates' ,'styles', 'scripts', 'fonts'], () => {
   browserSync({
     notify: false,
     port: 9000,
@@ -114,6 +125,7 @@ gulp.task('serve', ['styles', 'scripts', 'fonts'], () => {
     '.tmp/fonts/**/*'
   ]).on('change', reload);
 
+  gulp.watch('app/**/*.html', ['templates-reload']);
   gulp.watch('app/styles/**/*.scss', ['styles']);
   gulp.watch('app/scripts/**/*.js', ['scripts']);
   gulp.watch('app/fonts/**/*', ['fonts']);
@@ -165,7 +177,7 @@ gulp.task('wiredep', () => {
     .pipe(gulp.dest('app'));
 });
 
-gulp.task('build', ['lint', 'html', 'images', 'fonts', 'extras'], () => {
+gulp.task('build', ['templates' ,'lint', 'html', 'images', 'fonts', 'extras'], () => {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 

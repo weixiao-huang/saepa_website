@@ -1,150 +1,81 @@
-<!doctype html>
-<html class="no-js" lang="">
-<head>
-	<meta charset="utf-8">
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>SAEPA-清华大学学生教育扶贫公益协会</title>
+{% extends 'base.html' %}
 
-	<link rel="apple-touch-icon" href="apple-touch-icon.png">
-	<!-- Place favicon.ico in the root directory -->
+{% block title %}SAEPA-清华大学学生教育扶贫公益协会{% endblock %}
 
-	<!-- build:css styles/vendor.css -->
-	<!-- bower:css -->
-	<link rel="stylesheet" href="/bower_components/animate.css/animate.css" />
-	<!-- endbower -->
-	<!-- endbuild -->
+{% block styles %}
+<!-- build:css styles/index.css -->
+<link rel="stylesheet" href="styles/index.css">
+<!-- endbuild -->
+{% endblock %}
 
-	<!-- build:css styles/main.css -->
-	<link rel="stylesheet" href="styles/main.css">
-  <link rel="stylesheet" href="styles/index.css">
-	<!-- endbuild -->
-
-	<!-- build:js scripts/vendor/modernizr.js -->
-	<script src="/bower_components/modernizr/modernizr.js"></script>
-	<!-- endbuild -->
-</head>
-<body>
-    <!--[if lt IE 10]>
-      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-      <![endif]-->
-
-  <header>
-    <nav>
-      <div id="nav_left_box"></div>
-      <ul>
-        <li class="point">&middot;</li>
-        <li><a href="#">主页</a></li>
-        <li class="point">&middot;</li>
-        <li><a href="#">项目介绍</a></li>
-        <li class="point">&middot;</li>
-        <li><a href="#">Mooc</a></li>
-        <li class="point">&middot;</li>
-        <li><a href="#">联系我们</a></li>
-        <li>&middot;</li>
-      </ul>
-    </nav>
-    <div id="nav_right_img">
-      <img src="./images/协会logo.jpg" alt="SAEPA Logo">
-    </div>
-
-    <div id="index_img" width="500px">
-      <img src="./images/4.jpg" alt="SAEPA">
-    </div>
-  </header>
+{% block content %}
+<header>
+  {% include 'navbar.html' %}
+  {% include 'indexImgs.html' %}
+</header>
 
 
-  <div class="container">
-    <h1 class="title cn_fonts">关于我们<br>—</h1>
-    <p class="cn_fonts" id="new_prj">
-      清华大学学生教育扶贫公益协会（SAEPA）成立于2016年12月,隶属于清华大学教育扶贫办公室.协会着力构建一个教育扶贫平台,促进清华<br>
-      学子和中国贫困地区的孩子之间的交流。协会专注于周末支教、电脑传爱、梦想课堂等多个规范化项目，成立10年以来已取得累累硕果。<br>
-      任务魔方、课余时光、享读计划等新增项目更为协会注入活力
-    </p>
+<div class="container">
+  <h1 class="title cn_fonts">关于我们<br>—</h1>
+  <p class="cn_fonts" id="new_prj">
+    清华大学学生教育扶贫公益协会（SAEPA）成立于2016年12月,隶属于清华大学教育扶贫办公室.协会着力构建一个教育扶贫平台,促进清华<br>
+    学子和中国贫困地区的孩子之间的交流。协会专注于周末支教、电脑传爱、梦想课堂等多个规范化项目，成立10年以来已取得累累硕果。<br>
+    任务魔方、课余时光、享读计划等新增项目更为协会注入活力
+  </p>
 
-    <div class="icon_group cn_fonts">
-      <div class="col-md-4">
-        <img src="./images/5.jpg" alt="公益创造快乐">
-        <div class="icon_text">
-          <p>公益——创造快乐</p><p>与梦想的事业!</p><p>—</p>
-        </div>
+  <div class="icon_group cn_fonts">
+    <div class="col-md-4">
+      <img src="./images/5.jpg" alt="公益创造快乐">
+      <div class="icon_text">
+        <p>公益——创造快乐</p><p>与梦想的事业!</p><p>—</p>
       </div>
-      <div class="col-md-4">
-        <img src="./images/6.jpg" alt="知识改变命运">
-        <div class="icon_text">
-          <p>　知识改变命运，</p><p>　实践检验真知！</p><p>—</p>
-        </div>
+    </div>
+    <div class="col-md-4">
+      <img src="./images/6.jpg" alt="知识改变命运">
+      <div class="icon_text">
+        <p>　知识改变命运，</p><p>　实践检验真知！</p><p>—</p>
       </div>
-      <div class="col-md-4">
-        <img src="./images/7.jpg" alt="一个团队，一起努力">
-        <div class="icon_text">
-          <p>　一个团队，</p><p>　一起努力！</p><p>—</p>
-        </div>
+    </div>
+    <div class="col-md-4">
+      <img src="./images/7.jpg" alt="一个团队，一起努力">
+      <div class="icon_text">
+        <p>　一个团队，</p><p>　一起努力！</p><p>—</p>
       </div>
     </div>
   </div>
-
-  <div class="middle">
-    <div class="middle_text">
-      <span class="en_fonts" id="quot">”</span> <br>
-      <div class="cn_fonts">
-        2006年，协会由主要来自2006年中美暑期支教实践活动的支队长发起，在清华大学扶贫办公室大力支持与帮助下，成立了最初的 <br>
-        教育扶贫志愿者协会。<br>
-        之后，在学校社团部注册时，正式更名为清华大学学生教育扶贫公益协会，<br>
-        <span class="en_fonts">"Student Association of Educational Poverty Alleviation" —— SAEPA</span>
-      </div>
-    </div>
-  </div>
-
-  <div class="md_next">
-    <div class="container">
-      <div class="col-md-6 en_fonts">
-        <div id="saepa">SAEPA</div>
-        <div id="saepaer">SAEPAER</div>
-      </div>
-      <div class="col-md-6"></div>
-    </div>
-  </div>
-
-	<div class="footer en_fonts">
-		<p>With all the ♥ from SAEPA</p>
-	</div>
 </div>
 
-<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-<script>
-	(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-		function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-	e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-	e.src='https://www.google-analytics.com/analytics.js';
-	r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-	ga('create','UA-XXXXX-X');ga('send','pageview');
-</script>
+<div class="middle">
+  <div class="middle_text">
+    <span class="en_fonts" id="quot">”</span> <br>
+    <div class="cn_fonts">
+      2006年，协会由主要来自2006年中美暑期支教实践活动的支队长发起，在清华大学扶贫办公室大力支持与帮助下，成立了最初的 <br>
+      教育扶贫志愿者协会。<br>
+      之后，在学校社团部注册时，正式更名为清华大学学生教育扶贫公益协会，<br>
+      <span class="en_fonts">"Student Association of Educational Poverty Alleviation" —— SAEPA</span>
+    </div>
+  </div>
+</div>
 
-<!-- build:js scripts/vendor.js -->
-<!-- bower:js -->
-<script src="/bower_components/jquery/dist/jquery.js"></script>
-<!-- endbower -->
-<!-- endbuild -->
+<div class="md_next">
+  <div class="container">
+    <div class="col-md-6 en_fonts">
+      <div id="saepa">SAEPA</div>
+      <div id="saepaer">SAEPAER</div>
+    </div>
+    <div class="col-md-6"></div>
+  </div>
+</div>
 
-<!-- build:js scripts/plugins.js -->
-<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
-<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
-<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
-<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
-<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
-<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
-<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
-<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
-<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
-<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
-<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
-<script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
-<!-- endbuild -->
+<div class="footer en_fonts">
+  <p>With all the ♥ from SAEPA</p>
+</div>
+</div>
 
-<!-- build:js scripts/main.js -->
-<script src="scripts/main.js"></script>
+{% endblock %}
+
+{% block scripts %}
+<!-- build:js scripts/index.js -->
 <script src="scripts/nav.js"></script>
 <!-- endbuild -->
-</body>
-</html>
+{% endblock %}
