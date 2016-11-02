@@ -1,0 +1,52 @@
+
+$default-fonts: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", sans-serif;
+$nav_line: #cecccd;
+$nav_hover: #572a7b;
+$nav_line_width: 3px;
+
+// navbar
+#nav_left_box {
+  background-color: #563d7c;
+  width: 80px;
+  height: 120px;
+  position: absolute;
+  left: 50px;
+}
+
+#nav_right_img img {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  z-index: 1;
+}
+
+nav {
+  margin:0;
+  padding:0;
+  background-color: rgba(255, 255, 255, 1);
+  ul {
+    font-family: $default_fonts;
+    text-align: center;
+    font-size: 0;
+    padding: 20px;
+    li {
+      list-style-type: none;
+      display: inline-block;
+      border-bottom: $nav_line $nav_line_width solid;
+      font-size: 20px;
+      padding: 10px;
+
+      a {
+        color: black;
+        border-bottom: $nav_line 2px solid;
+        font-size: 20px;
+        padding: 11px 0;
+      }
+      a:hover {
+        border-bottom: $nav_hover 2px solid;
+        color: black;
+      }
+    }
+  }
+}
+

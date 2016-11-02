@@ -12,60 +12,14 @@ $icon-font-path: '../fonts/';
   padding: 0.2em 0;
 }
 
-/* Space out content a bit */
-body {
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-
-  /* Make the masthead heading the same height as the navigation */
-  h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
-  }
-}
 
 /* Custom page footer */
 .footer {
+  padding-left: 15px;
+  padding-right: 15px;
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;
-}
-
-.container-narrow > hr {
-  margin: 30px 0;
-}
-
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-  }
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-  p + h4 {
-    margin-top: 28px;
-  }
 }
 
 /* Responsive: Portrait tablets and up */
@@ -94,17 +48,6 @@ body {
 }
 
 
-@font-face {
-  font-family: Yahei;
-  src: url(../fonts/msyh.ttf);
-}
-$default_font: "微软雅黑";
-
-$nav_line: #cecccd;
-$nav_hover: #572a7b;
-$nav_line_width: 3px;
-
-
 a:link, a:visited, a:hover, a:active {
   text-decoration: none;
   -webkit-transition: all 0.5s;
@@ -114,78 +57,8 @@ a:link, a:visited, a:hover, a:active {
   transition: all 0.5s;
 }
 
-body {
+body, header {
   margin:0;
   padding:0
 }
 
-header {
-  margin: 0;
-  padding: 0;
-}
-
-#nav_left_box {
-  background-color: #563d7c;
-  width: 80px;
-  height: 120px;
-  position: absolute;
-  left: 50px;
-}
-
-#nav_right_img img {
-  position: absolute;
-  right: 10px;
-  top: 0;
-  z-index: 1;
-}
-
-nav {
-  margin:0;
-  padding:0;
-  background-color: rgba(255, 255, 255, 1);
-  ul {
-    font-family: $default_font, Yahei, serif;
-    text-align: center;
-    font-size: 0;
-    padding: 20px;
-    li {
-      list-style-type: none;
-      display: inline-block;
-      border-bottom: $nav_line $nav_line_width solid;
-      font-size: 20px;
-      padding: 10px;
-
-      a {
-        color: black;
-        border-bottom: $nav_line 2px solid;
-        font-size: 20px;
-        padding: 11px 0;
-      }
-      a:hover {
-        border-bottom: $nav_hover 2px solid;
-        color: black;
-      }
-    }
-  }
-}
-
-#index_img {
-  overflow: hidden;
-}
-
-img {
-  position: relative;
-  z-index: -1;
-}
-
-.footer {
-  width: 100%;
-  background: url("../images/2.jpg") no-repeat center center;
-  text-align: center;
-  color: white;
-  padding-top: 50px;
-}
-
-//li.nav_hover {
-//  border-bottom: $nav_hover 2px solid;
-//}

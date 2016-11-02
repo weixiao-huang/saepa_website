@@ -1,15 +1,16 @@
 
 $content-color: #592a7a;
+$default-fonts: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", sans-serif;
 
 .container {
   padding: 0 5%;
 }
 
 .cn_fonts, .en_fonts {
-  font-family: Helvetica, Tahoma, Arial, "Microsoft YaHei", "微软雅黑", SimSun,
-               "宋体", STXihei, "华文细黑", Heiti, "黑体", sans-serif;
+  font-family: $default-fonts;
 }
 
+// 关于我们以及下述的名字
 .title {
   font-size: 25px;
   color: $content-color;
@@ -22,6 +23,8 @@ p#new_prj {
   text-align: center;
 }
 
+
+// icon groups
 .icon_group {
   margin-top: 100px;
   color: $content-color;
@@ -39,6 +42,8 @@ p#new_prj {
   }
 }
 
+
+// the middle texts
 .middle {
   width: 100%;
   background: url("../images/1.jpg") no-repeat center center;
@@ -59,6 +64,8 @@ p#new_prj {
   padding-bottom: 50px;
 }
 
+
+// the next paragraph of the middle texts
 .md_next {
   background: #eee;
   padding-top: 100px;
@@ -72,4 +79,14 @@ p#new_prj {
     font-size: 65px;
     color: $content-color;
   }
+}
+
+
+// footer
+.footer {
+  width: 100%;
+  background: url("../images/2.jpg") no-repeat center center;
+  text-align: center;
+  color: white;
+  padding-top: 50px;
 }
