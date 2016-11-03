@@ -3,6 +3,7 @@ $default-fonts: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft Ya
 $nav_line: #cecccd;
 $nav_hover: #572a7b;
 $nav_line_width: 3px;
+$nav_line_width_solo: 3px;
 
 // navbar
 #nav_left_box {
@@ -38,12 +39,12 @@ nav {
 
       a {
         color: black;
-        border-bottom: $nav_line 2px solid;
+        border-bottom: $nav_line $nav_line_width_solo solid;
         font-size: 20px;
-        padding: 11px 0;
+        padding: 13px 0;
       }
       a:hover {
-        border-bottom: $nav_hover 2px solid;
+        border-bottom: $nav_hover $nav_line_width_solo solid;
         color: black;
       }
     }

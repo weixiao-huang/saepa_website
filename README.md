@@ -1,11 +1,11 @@
-# The Official Website of SAEPA (Student Association of Educational Poverty Alleviation
----
+# The Official Website of SAEPA (Student Association of Educational Poverty Alleviation)
 
 ## Intro
 Created by generator-gulp-webapp and add bower.
-use 
+use
 ```
-npm install && bower install
+npm install
+bower install
 ```
 
 to get dependency, and use
@@ -18,6 +18,6 @@ to watch and develop. For a build version, use
 gulp build
 ```
 
-and the target is in the `./dist` director.
+and the build file is in the `./dist` director.
 
 ### Powered with all the love from SAEPA
