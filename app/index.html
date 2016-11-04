@@ -1,17 +1,19 @@
 {% extends 'base.html' %}
 
-{% block title %}SAEPA-清华大学学生教育扶贫公益协会{% endblock %}
+{% block title %}清华大学学生教育扶贫公益协会{% endblock %}
 
 {% block styles %}
 <!-- build:css styles/index.css -->
+<link rel="stylesheet" href="styles/navbar.css">
 <link rel="stylesheet" href="styles/index.css">
+<link rel="stylesheet" href="styles/jumbotron.css">
 <!-- endbuild -->
 {% endblock %}
 
 {% block content %}
 <header>
   {% include 'navbar.html' %}
-  {% include 'indexImgs.html' %}
+  {% include 'jumbotron.html' %}
 </header>
 
 
@@ -70,12 +72,12 @@
 <div class="footer en_fonts">
   <p>With all the ♥ from SAEPA</p>
 </div>
-</div>
 
 {% endblock %}
 
 {% block scripts %}
 <!-- build:js scripts/index.js -->
-<script src="scripts/nav.js"></script>
+<script src="scripts/navbar.js"></script>
+<script src="scripts/jumbotron.js"></script>
 <!-- endbuild -->
 {% endblock %}
