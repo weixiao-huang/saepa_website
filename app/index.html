@@ -77,7 +77,14 @@
 
 {% block scripts %}
 <!-- build:js scripts/index.js -->
+
 <script src="scripts/navbar.js"></script>
 <script src="scripts/jumbotron.js"></script>
+<script type="text/javascript" src="scripts/jquery-1.9.0.min.js"></script>
+<script type="text/javascript">
+    $(window).load(function() {
+        $('#index_img').nivoSlider();
+    });
+</script>
 <!-- endbuild -->
 {% endblock %}
