@@ -7,6 +7,10 @@
 <link rel="stylesheet" href="styles/navbar.css">
 <link rel="stylesheet" href="styles/index.css">
 <link rel="stylesheet" href="styles/jumbotron.css">
+<link rel="stylesheet" href="themes/default/default.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="themes/light/light.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="themes/dark/dark.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="themes/bar/bar.css" type="text/css" media="screen" />
 <!-- endbuild -->
 {% endblock %}
 
@@ -79,11 +83,11 @@
 <!-- build:js scripts/index.js -->
 
 <script src="scripts/navbar.js"></script>
-<script src="scripts/jumbotron.js"></script>
 <script type="text/javascript" src="scripts/jquery-1.9.0.min.js"></script>
+<script src="scripts/jumbotron.js"></script>
 <script type="text/javascript">
     $(window).load(function() {
-        $('#index_img').nivoSlider();
+        $('#slider').nivoSlider();
     });
 </script>
 <!-- endbuild -->
