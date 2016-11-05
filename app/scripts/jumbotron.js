@@ -1,6 +1,7 @@
 
 var img = document.getElementById('index_img');
 var nav_height = $('nav').outerHeight();
+var $arrow = $('#arrow');
 
 
 // Initial state
@@ -17,4 +18,9 @@ window.addEventListener('resize', function(ev) {
     img.children[i].style.width = document.body.offsetWidth + 'px';
     img.children[i].style.marginTop = '-' + nav_height + 'px';
   }
+});
+
+/* scroll down to container*/
+$arrow.click(function() {
+    $('html,body').animate({scrollTop:$('.container').offset().top}, 800);
 });
