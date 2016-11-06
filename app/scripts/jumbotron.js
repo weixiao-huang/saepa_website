@@ -1,37 +1,45 @@
+(function () {
+  var $img = $('#index_img');
+  var $nav_height = $('nav').outerHeight();
+  var $arrow = $('#arrow');
+  var $arrowbg = $('#arrowbg');
 
-var img = document.getElementById('index_img');
-var $nav_height = $('nav').outerHeight();
-var $arrow = $('#arrow');
-
-function putArrow(ar) {
-  ar.style.left = document.body.offsetWidth / 2 - ar.offsetWidth / 2 + 'px';
-  ar.style.top = innerHeight - ar.offsetHeight + 'px';
-}
-
-// Initial state
-for (var i = 0; i < img.childElementCount; ++i) {
-  img.children[i].style.width = document.body.offsetWidth + 'px';
-  img.children[i].style.marginTop = '-' + $nav_height + 'px';
-}
-img.style.maxHeight = innerHeight - $nav_height + 'px';
-
-var arrow = document.getElementById('arrow');
-var arrowbg = document.getElementById('arrowbg');
-putArrow(arrowbg);
-putArrow(arrow);
-
-// When window is resize
-window.addEventListener('resize', function(ev) {
-  for (var i = 0; i < img.childElementCount; ++i) {
-    img.children[i].style.width = document.body.offsetWidth + 'px';
-    img.children[i].style.marginTop = '-' + $nav_height + 'px';
+  function putArrow($ar) {
+    var windowWidth = document.body.offsetWidth;
+    var windowHeight = innerHeight;
+    if (windowHeight > $img.children().height()) {
+      windowHeight = $img.children().height();
+    }
+    $ar.css({
+      'left': windowWidth / 2 - $ar.width() / 2 + 'px',
+      'top': windowHeight - $ar.height() + 1 + 'px'
+    });
   }
-  putArrow(arrowbg);
-  putArrow(arrow);
-  img.style.maxHeight = innerHeight - $nav_height + 'px';
-});
 
-/* scroll down to container*/
-$arrow.click(function() {
-    $('html,body').animate({scrollTop:$('.container').offset().top}, 800);
-});
+  function setJumbotron() {
+    // Jumbotron Styles
+    $img.children().css({
+      'width': document.body.offsetWidth + 'px',
+      'margin-top': '-' + $nav_height + 'px'
+    });
+    $img.css('max-height', innerHeight - $nav_height + 'px');
+
+    putArrow($arrow);
+    putArrow($arrowbg);
+  }
+
+  // Jquery Codes
+  $(function () {
+    setJumbotron();
+    // When window is resize
+    $(window).resize(function () {
+      setJumbotron();
+    });
+
+    /* scroll down to container*/
+    $arrow.click(function() {
+      $('html,body').animate({scrollTop:$('.container').offset().top}, 800);
+    });
+  });
+})();
+
