@@ -7,9 +7,20 @@
  * http://www.opensource.org/licenses/mit-license.php
  */
 
+var img = document.getElementById('slider');
+var nav_height = $('nav').outerHeight();
+
+// Initial state
+for (var i = 0; i < img.childElementCount; ++i) {
+  img.children[i].style.width = document.body.offsetWidth + 'px';
+  img.children[i].style.marginTop = '-' + nav_height + 'px';
+}
+img.style.maxHeight = innerHeight - nav_height + 'px';
+
 (function($) {
     var NivoSlider = function(element, options){
         // Defaults are below
+
         var settings = $.extend({}, $.fn.nivoSlider.defaults, options);
 
         // Useful variables. Play carefully.
