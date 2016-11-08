@@ -5,7 +5,8 @@
     "bootstrap-sass": "~3.3.5",
     "modernizr": "~2.8.1",
     "animate.css": "^3.5.2",
-    "animate-sass": "^0.6.6"
+    "animate-sass": "^0.6.6",
+    "csshake": "^1.5.1"
   },
   "overrides": {
     "bootstrap-sass": {
