@@ -9,8 +9,6 @@
 // });
 
 $(function () {
-  var nav_img = document.getElementById('nav_right_img');
-  var nav_height = $('nav').outerHeight();
-  nav_img.children[0].style.height = nav_height + 'px';
+  $('#nav_right_img').children().css('height', $('nav').height() + 'px');
 });
 
