@@ -9,6 +9,19 @@
 // });
 
 $(function () {
-  $('#nav_right_img').children().css('height', $('nav').height() + 'px');
+  function putNav() {
+    var $nav_imgs = $('#nav_right_img, #nav_left_box');
+    if (document.body.offsetWidth < 1000) {
+      $nav_imgs.hide();
+      return;
+    }
+    $('#nav_right_img').children().css('height', $('nav').height() + 'px');
+    $nav_imgs.show();
+  }
+
+  putNav();
+  $(window).resize(function () {
+    putNav();
+  })
 });
 
