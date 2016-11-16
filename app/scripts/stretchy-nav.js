@@ -1,10 +1,11 @@
 $(function(){
-  var stretchyNavs = $('.cd-stretchy-nav');
+  const stretchyNavs = $('.cd-stretchy-nav');
+  stretchyNavs.hide();
 
   if( stretchyNavs.length > 0) {
 		stretchyNavs.each(function(){
-			var stretchyNav = $(this),
-				stretchyNavTrigger = stretchyNav.find('.cd-nav-trigger');
+			const stretchyNav = $(this),
+        stretchyNavTrigger = stretchyNav.find('.cd-nav-trigger');
 
 			stretchyNavTrigger.on('click', function(event){
 				event.preventDefault();
@@ -13,15 +14,11 @@ $(function(){
 		});
 
 		$(document).on('click', function(event){
-			( !$(event.target).is('.cd-nav-trigger') && !$(event.target).is('.cd-nav-trigger span') ) && stretchyNavs.removeClass('nav-is-visible');
+			( !$(event.target).is('.cd-nav-trigger') &&
+        !$(event.target).is('.cd-nav-trigger span') ) &&
+      stretchyNavs.removeClass('nav-is-visible');
 		});
 	}
-
-  if ( $(document).scrollTop() < $('.container').offset().top ) {
-    stretchyNavs.hide();
-  } else {
-    stretchyNavs.show();
-  }
   $(window).on('scroll', function () {
     if ( $(document).scrollTop() < $('.container').offset().top ) {
       stretchyNavs.fadeOut(300);

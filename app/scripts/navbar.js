@@ -10,7 +10,7 @@
 
 $(function () {
   function putNav() {
-    var $nav_imgs = $('#nav_right_img, #nav_left_box');
+    const $nav_imgs = $('#nav_right_img, #nav_left_box');
     if (document.body.offsetWidth < 1000) {
       $nav_imgs.hide();
       return;
