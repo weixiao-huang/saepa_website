@@ -37,6 +37,6 @@
 
     /* scroll down to container*/
     $('#arrow, #arrowbg').click(() => $('html,body').animate(
-      {scrollTop:$('.container').offset().top}, 800));
+      { scrollTop:$('.container').offset().top }, 800));
   });
 })();
