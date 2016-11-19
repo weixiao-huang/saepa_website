@@ -52,12 +52,10 @@ $icon-font-path: '../fonts/';
 a {
   text-decoration: none;
   outline: none;
-  color: black;
   &:hover,
   &:link,
   &:focus {
     text-decoration: none;
-    color: black;
   }
   &:visited {
     text-decoration: none;

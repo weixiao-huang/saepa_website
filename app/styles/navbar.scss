@@ -44,6 +44,12 @@ nav {
 
       a {
         padding: 14px 0;
+        &:hover,
+        &:link,
+        &:focus,
+        &:visited {
+          color: #333;
+        }
       }
     }
   }
