@@ -36,16 +36,14 @@ nav {
       border-bottom: $nav_line $nav_line_width solid;
       font-size: 20px;
       padding: 10px;
+      transition: 0.6s;
+
+      &:not(.point):hover {
+        border-bottom: $nav_hover $nav_line_width_solo solid;
+      }
 
       a {
-        color: black;
-        border-bottom: $nav_line $nav_line_width_solo solid;
-        font-size: 20px;
-        padding: 13px 0;
-      }
-      a:hover {
-        border-bottom: $nav_hover $nav_line_width_solo solid;
-        color: black;
+        padding: 14px 0;
       }
     }
   }

@@ -48,14 +48,22 @@ $icon-font-path: '../fonts/';
 }
 
 
-a:link, a:visited, a:hover, a:active {
+// Links
+a {
   text-decoration: none;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  -ms-transition: all 0.5s;
-  -o-transition: all 0.5s;
-  transition: all 0.5s;
+  outline: none;
+  color: black;
+  &:hover,
+  &:link,
+  &:focus {
+    text-decoration: none;
+    color: black;
+  }
+  &:visited {
+    text-decoration: none;
+  }
 }
+
 
 body, header {
   margin:0;
