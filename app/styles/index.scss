@@ -43,6 +43,44 @@ p#new_prj {
   }
 }
 
+// project groups
+.project_group {
+  margin-top: 50px;
+  color: black;
+  text-align: center;
+
+  img {
+    width: 100%;
+  }
+  .project_text {
+    padding-top: 30px;
+    p {
+      text-align: center;
+      font-size: 17px;
+      padding: 2px;
+      margin: 0;
+    }
+  }
+}
+.row {
+  padding: 10px;
+}
+
+.flipping {
+  color: rgba(0, 0, 0, 1);
+  -webkit-transform: rotateX(0deg); /* Safari */
+  transform: rotateX(0deg); /* Standard syntax */
+  -webkit-transition: 2s; /* For Safari 3.1 to 6.0 */
+  transition: 2s;
+}
+
+.flipped {
+  color: rgba(0, 0, 0, 0);
+  -webkit-transform: rotateX(90deg); /* Safari */
+  transform: rotateX(90deg); /* Standard syntax */
+  -webkit-transition: 2s; /* For Safari 3.1 to 6.0 */
+  transition: 2s;
+}
 
 // the middle texts
 .middle {
