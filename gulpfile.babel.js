@@ -1,23 +1,42 @@
-// generated on 2016-09-20 using generator-webapp 2.1.0
-
+// generated on 2016-02-25 using generator-gulp-webapp 1.1.1
 import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import browserSync from 'browser-sync';
 import del from 'del';
-import { stream as wiredep } from 'wiredep';
+import {stream as wiredep} from 'wiredep';
 import swig from 'gulp-swig';
+import path from 'path'
+import fs from 'fs';
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
 
 gulp.task('templates', () => {
   return gulp.src('app/*.html')
-    .pipe(swig({ default: { cache: false } }))
+    .pipe(swig({defaults: { cache: false }}))
     .pipe(gulp.dest('.tmp'))
     .pipe(browserSync.stream());
 });
 
-gulp.task('templates-reload', ['templates'], browserSync.reload);
+function sassImporter(url,prev,done){
+  var localFrag = path.join(path.dirname(prev), '_' + url + '.scss');
+  if (fs.existsSync(localFrag)) {
+    return {contents: fs.readFileSync(localFrag, 'utf8')}
+  }
+  var localFile = path.join(path.dirname(prev), url + '.scss')
+  if (fs.existsSync(localFile)) {
+    return {contents: fs.readFileSync(localFile, 'utf8')}
+  }
+  var globalFrag = path.join(__dirname, '_' + url + '.scss')
+  if (fs.existsSync(globalFrag)) {
+    return {contents: fs.readFileSync(globalFrag, 'utf8')}
+  }
+  var globalFile = path.join(__dirname, url + '.scss')
+  if (fs.existsSync(globalFile)) {
+    return {contents: fs.readFileSync(globalFile, 'utf8')}
+  }
+  return null
+}
 
 gulp.task('styles', () => {
   return gulp.src('app/styles/*.scss')
@@ -26,12 +45,12 @@ gulp.task('styles', () => {
     .pipe($.sass.sync({
       outputStyle: 'expanded',
       precision: 10,
-      includePaths: ['.']
+      importer: sassImporter
     }).on('error', $.sass.logError))
-    .pipe($.autoprefixer({ browsers: ['> 1%', 'last 2 versions', 'Firefox ESR'] }))
+    .pipe($.autoprefixer({browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']}))
     .pipe($.sourcemaps.write())
     .pipe(gulp.dest('.tmp/styles'))
-    .pipe(reload({ stream: true }));
+    .pipe(browserSync.stream());
 });
 
 gulp.task('scripts', () => {
@@ -41,51 +60,49 @@ gulp.task('scripts', () => {
     .pipe($.babel())
     .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest('.tmp/scripts'))
-    .pipe(reload({ stream: true }));
+    .pipe(browserSync.stream());
 });
 
 function lint(files, options) {
-  return gulp.src(files)
-    .pipe(reload({ stream: true, once: true }))
-    .pipe($.eslint(options))
-    .pipe($.eslint.format())
-    .pipe($.if(!browserSync.active, $.eslint.failAfterError()));
+  return () => {
+    return gulp.src(files)
+      .pipe(reload({stream: true, once: true}))
+      .pipe($.eslint(options))
+      .pipe($.eslint.format())
+      .pipe($.if(!browserSync.active, $.eslint.failAfterError()));
+  };
 }
+const testLintOptions = {
+  env: {
+    mocha: true
+  }
+};
 
-gulp.task('lint', () => {
-  return lint('app/scripts/**/*.js', {
-    fix: true
-  })
-    .pipe(gulp.dest('app/scripts'));
-});
-gulp.task('lint:test', () => {
-  return lint('test/spec/**/*.js', {
-    fix: true,
-    env: {
-      mocha: true
-    }
-  })
-    .pipe(gulp.dest('test/spec/**/*.js'));
-});
+gulp.task('lint', lint('app/scripts/**/*.js'));
+gulp.task('lint:test', lint('test/spec/**/*.js', testLintOptions));
 
 gulp.task('html', ['styles', 'scripts'], () => {
   return gulp.src('.tmp/*.html')
-    .pipe($.useref({ searchPath: ['.tmp', 'app', '.'] }))
+    .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
     .pipe($.if('*.js', $.uglify()))
-    .pipe($.if('*.css', $.cssnano({ safe: true, autoprefixer: false })))
-    .pipe($.if('*.html', $.htmlmin({ collapseWhitespace: true })))
+    .pipe($.if('*.css', $.cssnano()))
+    .pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
     .pipe(gulp.dest('dist'));
 });
 
 gulp.task('images', () => {
   return gulp.src('app/images/**/*')
-    .pipe($.cache($.imagemin({
+    .pipe($.if($.if.isFile, $.cache($.imagemin({
       progressive: true,
       interlaced: true,
       // don't remove IDs from SVGs, they are often used
       // as hooks for embedding and styling
-      svgoPlugins: [{ cleanupIDs: false }]
-    })))
+      svgoPlugins: [{cleanupIDs: false}]
+    }))
+      .on('error', function (err) {
+        console.log(err);
+        this.end();
+      })))
     .pipe(gulp.dest('dist/images'));
 });
 
@@ -99,15 +116,19 @@ gulp.task('fonts', () => {
 gulp.task('extras', () => {
   return gulp.src([
     'app/*.*',
-    '!app/*.html'
+    '!app/*.html',
+    'Dockerfile',
+    '.dockerignore'
   ], {
     dot: true
   }).pipe(gulp.dest('dist'));
 });
 
-gulp.task('clean', del.bind(null, ['.tmp', 'dist']));
+gulp.task('clean', del.bind(null, ['.tmp', 'dist/*']));
 
-gulp.task('serve', ['templates' ,'styles', 'scripts', 'fonts'], () => {
+gulp.task('templates-reload', ['templates'], browserSync.reload);
+
+gulp.task('serve', ['wiredep', 'templates', 'styles', 'scripts', 'fonts'], () => {
   browserSync({
     notify: false,
     port: 9000,
@@ -120,7 +141,7 @@ gulp.task('serve', ['templates' ,'styles', 'scripts', 'fonts'], () => {
   });
 
   gulp.watch([
-    'app/*.html',
+    '.tmp/scripts/**/*.js',
     'app/images/**/*',
     '.tmp/fonts/**/*'
   ]).on('change', reload);
@@ -177,8 +198,8 @@ gulp.task('wiredep', () => {
     .pipe(gulp.dest('app'));
 });
 
-gulp.task('build', ['templates' ,'lint', 'html', 'images', 'fonts', 'extras'], () => {
-  return gulp.src('dist/**/*').pipe($.size({ title: 'build', gzip: true }));
+gulp.task('build', ['wiredep', 'templates', 'lint', 'html', 'images', 'fonts', 'extras'], () => {
+  return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
 });
 
 gulp.task('default', ['clean'], () => {

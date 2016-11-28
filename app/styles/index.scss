@@ -26,7 +26,7 @@ p#new_prj {
 
 // icon groups
 .icon_group {
-  margin-top: 100px;
+  margin-top: 0px;
   color: $content-color;
   text-align: center;
 
@@ -36,6 +36,7 @@ p#new_prj {
   .icon_text {
     padding-top: 20px;
     p {
+      font-size: 20px;
       padding: 2px;
       margin: 0;
     }
