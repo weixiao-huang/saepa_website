@@ -75,9 +75,9 @@ p#new_prj {
 }
 
 .flipped {
-  color: rgba(0, 0, 0, 0);
-  -webkit-transform: rotateX(90deg); /* Safari */
-  transform: rotateX(90deg); /* Standard syntax */
+  //color: rgba(0, 0, 0, 0);
+  -webkit-transform: rotateX(180deg); /* Safari */
+  transform: rotateX(180deg); /* Standard syntax */
   -webkit-transition: 2s; /* For Safari 3.1 to 6.0 */
   transition: 2s;
 }
@@ -128,4 +128,44 @@ p#new_prj {
   text-align: center;
   color: white;
   padding-top: 50px;
+}
+
+.hidebf {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.cube {
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+
+.face {
+  display: block;
+  position: absolute;
+  border: none;
+}
+
+/* Define each face based on direction */
+.front {
+  background: #ffffff;
+  transform: translateZ(1px) translateY(-100px);
+  -webkit-transform: translateZ(1px) translateY(-100px);
+}
+
+.back {
+  background: #f8f9fb;
+  color: #f8f9fb;
+  transform: rotateY(180deg) translateZ(0px) translateY(-100px);
+  -webkit-transform: rotateY(180deg) translateZ(0px) translateY(-100px);
+}
+
+.box {
+ // position: relative;
+  height: 200px;
+  width: 200px;
+}
+
+.whitebackground {
+  background: #ffffff;
 }
