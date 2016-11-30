@@ -1,14 +1,10 @@
 
 $content-color: #592a7a;
-$default-fonts: Helvetica, Tahoma, Arial, STXihei, "华文细黑", "Microsoft YaHei", "微软雅黑", sans-serif;
 
 .container {
   padding: 0 5%;
 }
 
-.cn_fonts, .en_fonts {
-  font-family: $default-fonts;
-}
 
 // 关于我们以及下述的名字
 .title {

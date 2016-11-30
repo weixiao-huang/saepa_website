@@ -1,0 +1,103 @@
+
+//.jumb {
+//  width: 100%;
+//  background: url("../images/projects/jumb.jpg") no-repeat center center;
+//  text-align: center;
+//  background-size: cover;
+//  opacity: 0.9;
+//
+//  .jumb_text {
+//    padding: 100px 0;
+//    font-size: 50px;
+//    color: #563d7c;
+//  }
+//}
+
+.jumb {
+  img {
+    width: 100%;
+  }
+}
+
+body {
+  background-color: #dadcdd;
+}
+
+.containerBox {
+  margin: 40px;
+}
+
+.project {
+  margin: 50px 0;
+  padding-top: 1px;
+  background: white;
+  box-shadow: 2px 2px 10px #666;
+}
+
+.intro {
+  margin: 10px;
+  padding: 20px 40px;
+  border: 1px #d6d6d6 solid;
+
+  .titleBox {
+    border-left: 5px #563d7c solid;
+
+    .title {
+      font-size: 3em;
+    }
+
+    .title, .subtitle {
+      margin-left: 30px;
+    }
+  }
+
+  .project_text {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+
+    -webkit-column-gap: 50px;
+    -moz-column-gap: 50px;
+    column-gap: 50px;;
+
+    padding: 30px;
+    font-size: 16px;
+  }
+}
+
+.achievements {
+  display:flex;
+  .left {
+    width: 50%;
+    img {
+      width: 100%;
+    }
+  }
+
+  .right {
+    width: 50%;
+    .up {
+      display:flex;
+      align-items: center;
+      justify-content:center;
+      flex-direction: column;
+
+      background: #04363d;
+      color: white;
+      font-size: 4rem;
+    }
+    .down {
+      padding: 50px;
+      font-size: 13px;
+      display:flex;
+      flex-direction: column;
+      justify-content:center;
+    }
+    .up, .down {
+      height: 50%;
+      .bold {
+        font-weight: bold;
+      }
+    }
+  }
+}

@@ -69,3 +69,8 @@ body, header {
   background-color: #f8f9fb;
 }
 
+$default-fonts: "华文细黑", "Microsoft YaHei", "微软雅黑", Helvetica, Tahoma, Arial, STXihei, sans-serif;
+
+.cn_fonts, .en_fonts {
+  font-family: $default-fonts;
+}
