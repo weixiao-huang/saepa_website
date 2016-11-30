@@ -1,0 +1,30 @@
+
+// footer
+.footer {
+  overflow: hidden;
+  width: 100%;
+  background: url("../images/2.jpg") no-repeat center center;
+  color: white;
+
+  .title {
+    font-size: 25px;
+    color: white;
+    text-align: left;
+    padding-bottom: 10px;
+  }
+  .text {
+    font-size: 15px;
+    color: white;
+    text-align: left;
+    padding-left: 10px;
+  }
+
+  .row {
+    margin: 10px 100px;
+  }
+
+  .love {
+    text-align: right;
+    padding: 10px 40px;
+  }
+}
