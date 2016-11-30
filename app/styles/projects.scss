@@ -1,15 +1,21 @@
 
-.jumb {
-  width: 100%;
-  background: url("../images/projects/jumb.jpg") no-repeat center center;
-  text-align: center;
-  background-size: cover;
-  opacity: 0.9;
+//.jumb {
+//  width: 100%;
+//  background: url("../images/projects/jumb.jpg") no-repeat center center;
+//  text-align: center;
+//  background-size: cover;
+//  opacity: 0.9;
+//
+//  .jumb_text {
+//    padding: 100px 0;
+//    font-size: 50px;
+//    color: #563d7c;
+//  }
+//}
 
-  .jumb_text {
-    padding: 100px 0;
-    font-size: 50px;
-    color: #563d7c;
+.jumb {
+  img {
+    width: 100%;
   }
 }
 
@@ -18,13 +24,14 @@ body {
 }
 
 .containerBox {
-  margin: 20px;
+  margin: 40px;
 }
 
 .project {
-  margin: 10px 0;
+  margin: 50px 0;
   padding-top: 1px;
   background: white;
+  box-shadow: 2px 2px 10px #666;
 }
 
 .intro {
@@ -48,6 +55,11 @@ body {
     -webkit-column-count: 2;
     -moz-column-count: 2;
     column-count: 2;
+
+    -webkit-column-gap: 50px;
+    -moz-column-gap: 50px;
+    column-gap: 50px;;
+
     padding: 30px;
     font-size: 16px;
   }
