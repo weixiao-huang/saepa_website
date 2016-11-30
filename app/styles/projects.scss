@@ -12,3 +12,80 @@
     color: #563d7c;
   }
 }
+
+body {
+  background-color: #dadcdd;
+}
+
+.containerBox {
+  margin: 20px;
+}
+
+.project {
+  margin: 10px 0;
+  padding-top: 1px;
+  background: white;
+}
+
+.intro {
+  margin: 10px;
+  padding: 20px 40px;
+  border: 1px #d6d6d6 solid;
+
+  .titleBox {
+    border-left: 5px #563d7c solid;
+
+    .title {
+      font-size: 3em;
+    }
+
+    .title, .subtitle {
+      margin-left: 30px;
+    }
+  }
+
+  .project_text {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    padding: 30px;
+    font-size: 16px;
+  }
+}
+
+.achievements {
+  display:flex;
+  .left {
+    width: 50%;
+    img {
+      width: 100%;
+    }
+  }
+
+  .right {
+    width: 50%;
+    .up {
+      display:flex;
+      align-items: center;
+      justify-content:center;
+      flex-direction: column;
+
+      background: #04363d;
+      color: white;
+      font-size: 4rem;
+    }
+    .down {
+      padding: 50px;
+      font-size: 13px;
+      display:flex;
+      flex-direction: column;
+      justify-content:center;
+    }
+    .up, .down {
+      height: 50%;
+      .bold {
+        font-weight: bold;
+      }
+    }
+  }
+}
