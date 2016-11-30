@@ -2,3 +2,51 @@
 body {
   background-color: #dadcdd;
 }
+
+$box_border_color: #563d7c;
+$animate_time: 0.3s;
+
+.framework {
+  margin: 50px;
+  background: white;
+}
+
+.col_box, .row_box {
+  display:flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+
+.row_box {
+  flex-direction: column;
+  width: 100%;
+}
+
+.s_name {
+  padding: 18px 0;
+  border: 1px $box_border_color solid;
+  z-index: 10;
+}
+
+.box_hidden {
+  -webkit-transition: $animate_time;
+  -moz-transition: $animate_time;
+  -o-transition: $animate_time;
+  transition: $animate_time;
+
+  overflow: hidden;
+  max-height: 0;
+  padding: 0;
+  border: 0;
+}
+
+.col_pack:hover .box_hidden {
+  max-height: 150px;
+  padding: 18px 0;
+  border: 1px $box_border_color solid;
+}
+
+.col_pack {
+  width: 100%;
+}
