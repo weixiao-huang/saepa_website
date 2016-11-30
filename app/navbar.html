@@ -1,16 +1,24 @@
+{% set items = [
+  {path: 'index.html', text: '主页'},
+  {path: 'projects.html', text: '项目介绍'},
+  {path: 'mooc.html', text: 'MOOC'},
+  {path: 'http://ixuefang.cn/', text: '学方论坛'},
+  {path: 'contactus.html', text: '联系我们'}]
+%}
+
 <nav>
   <div id="nav_left_box"></div>
   <ul>
-    <li class="point">&middot;</li>
-    <li><a href="index.html">主页</a></li>
-    <li class="point">&middot;</li>
-    <li><a href="projects.html">项目介绍</a></li>
-    <li class="point">&middot;</li>
-    <li><a href="mooc.html">MOOC</a></li>
-    <li class="point">&middot;</li>
-    <li><a href="http://ixuefang.cn/" target="_blank">学方论坛</a></li>
-    <li class="point">&middot;</li>
-    <li><a href="contactus.html">联系我们</a></li>
+    {% for item in items %}
+      <li class="point">&middot;</li>
+      {% if loop.index0 === 3 %}
+        <li><a href="{{ item.path }}" target="_blank">{{ item.text }}</a></li>
+      {% elseif loop.index0 === index %}
+        <li class="active"><a href="{{ item.path }}">{{ item.text }}</a></li>
+      {% else %}
+        <li><a href="{{ item.path }}">{{ item.text }}</a></li>
+      {% endif %}
+    {% endfor %}
     <li>&middot;</li>
   </ul>
   <div id="nav_right_img">

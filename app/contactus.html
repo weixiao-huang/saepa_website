@@ -12,11 +12,12 @@
 
 {% block content %}
 <header>
-  {% include 'navbar.html' %}
+  {% set index = 4 %}
+  {% include 'navbar.html' with index %}
 </header>
 
 <div class="container cn_fonts">
-  {% include 'stretchy-nav.html' %}
+  {% include 'stretchy-nav.html' with index %}
 
   <section>
     <div class="title text-center">

@@ -1,15 +1,32 @@
+{% set items = [
+  {path: 'index.html', text: '主页'},
+  {path: 'projects.html', text: '项目介绍'},
+  {path: 'mooc.html', text: 'MOOC'},
+  {path: 'http://ixuefang.cn/', text: '学方论坛'},
+  {path: 'contactus.html', text: '联系我们'}]
+%}
+
 <div class="cd-stretchy-nav">
   <a class="cd-nav-trigger" href="#0">
-
     <span aria-hidden="true"></span>
   </a>
 
-  <ul>
-    <li><a href="index.html" class="active"><span>主页</span></a></li>
-    <li><a href="projects.html"><span>项目介绍</span></a></li>
-    <li><a href="mooc.html"><span>MOOC</span></a></li>
-    <li><a href="http://ixuefang.cn/" target="_blank"><span>学方论坛</span></a></li>
-    <li><a href="contactus.html"><span>联系我们</span></a></li>
+  <ul class="cn_fonts">
+    {% for item in items %}
+      {% if loop.index0 === 3 %}
+        <li><a href="{{ item.path }}" target="_blank">
+          <span>{{ item.text }}</span>
+        </a></li>
+      {% elseif loop.index0 === index %}
+        <li><a href="{{ item.path }}" class="active">
+          <span>{{ item.text }}</span>
+        </a></li>
+      {% else %}
+        <li><a href="{{ item.path }}">
+          <span>{{ item.text }}</span>
+        </a></li>
+      {% endif %}
+    {% endfor %}
   </ul>
 
   <span aria-hidden="true" class="stretchy-nav-bg"></span>
