@@ -3,7 +3,7 @@ import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import browserSync from 'browser-sync';
 import del from 'del';
-import {stream as wiredep} from 'wiredep';
+import { stream as wiredep } from 'wiredep';
 import swig from 'gulp-swig';
 import path from 'path'
 import fs from 'fs';
@@ -13,7 +13,7 @@ const reload = browserSync.reload;
 
 gulp.task('templates', () => {
   return gulp.src('app/*.html')
-    .pipe(swig({defaults: { cache: false }}))
+    .pipe(swig({ defaults: { cache: false } }))
     .pipe(gulp.dest('.tmp'))
     .pipe(browserSync.stream());
 });
@@ -21,19 +21,19 @@ gulp.task('templates', () => {
 function sassImporter(url,prev,done){
   var localFrag = path.join(path.dirname(prev), '_' + url + '.scss');
   if (fs.existsSync(localFrag)) {
-    return {contents: fs.readFileSync(localFrag, 'utf8')}
+    return { contents: fs.readFileSync(localFrag, 'utf8') }
   }
   var localFile = path.join(path.dirname(prev), url + '.scss')
   if (fs.existsSync(localFile)) {
-    return {contents: fs.readFileSync(localFile, 'utf8')}
+    return { contents: fs.readFileSync(localFile, 'utf8') }
   }
   var globalFrag = path.join(__dirname, '_' + url + '.scss')
   if (fs.existsSync(globalFrag)) {
-    return {contents: fs.readFileSync(globalFrag, 'utf8')}
+    return { contents: fs.readFileSync(globalFrag, 'utf8') }
   }
   var globalFile = path.join(__dirname, url + '.scss')
   if (fs.existsSync(globalFile)) {
-    return {contents: fs.readFileSync(globalFile, 'utf8')}
+    return { contents: fs.readFileSync(globalFile, 'utf8') }
   }
   return null
 }
@@ -47,7 +47,7 @@ gulp.task('styles', () => {
       precision: 10,
       importer: sassImporter
     }).on('error', $.sass.logError))
-    .pipe($.autoprefixer({browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']}))
+    .pipe($.autoprefixer({ browsers: ['> 1%', 'last 2 versions', 'Firefox ESR'] }))
     .pipe($.sourcemaps.write())
     .pipe(gulp.dest('.tmp/styles'))
     .pipe(browserSync.stream());
@@ -66,7 +66,7 @@ gulp.task('scripts', () => {
 function lint(files, options) {
   return () => {
     return gulp.src(files)
-      .pipe(reload({stream: true, once: true}))
+      .pipe(reload({ stream: true, once: true }))
       .pipe($.eslint(options))
       .pipe($.eslint.format())
       .pipe($.if(!browserSync.active, $.eslint.failAfterError()));
@@ -83,10 +83,10 @@ gulp.task('lint:test', lint('test/spec/**/*.js', testLintOptions));
 
 gulp.task('html', ['styles', 'scripts'], () => {
   return gulp.src('.tmp/*.html')
-    .pipe($.useref({searchPath: ['.tmp', 'app', '.']}))
+    .pipe($.useref({ searchPath: ['.tmp', 'app', '.'] }))
     .pipe($.if('*.js', $.uglify()))
     .pipe($.if('*.css', $.cssnano()))
-    .pipe($.if('*.html', $.htmlmin({collapseWhitespace: true})))
+    .pipe($.if('*.html', $.htmlmin({ collapseWhitespace: true })))
     .pipe(gulp.dest('dist'));
 });
 
@@ -97,7 +97,7 @@ gulp.task('images', () => {
       interlaced: true,
       // don't remove IDs from SVGs, they are often used
       // as hooks for embedding and styling
-      svgoPlugins: [{cleanupIDs: false}]
+      svgoPlugins: [{ cleanupIDs: false }]
     }))
       .on('error', function (err) {
         console.log(err);
@@ -199,7 +199,7 @@ gulp.task('wiredep', () => {
 });
 
 gulp.task('build', ['wiredep', 'templates', 'lint', 'html', 'images', 'fonts', 'extras'], () => {
-  return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: true}));
+  return gulp.src('dist/**/*').pipe($.size({ title: 'build', gzip: true }));
 });
 
 gulp.task('default', ['clean'], () => {
