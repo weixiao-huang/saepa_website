@@ -10,16 +10,8 @@
 
 $(function () {
   function putNav() {
-    const $nav_imgs = $('#nav_right_img, #nav_left_box');
-
-    if (document.body.offsetWidth < 1000) {
-      $nav_imgs.hide();
-      return;
-    }
-
     $('#nav_right_img').children().css(
-      'height', $('nav').height() + 'px');
-    $nav_imgs.show();
+      'height', $('nav').height() - 2 + 'px');
   }
 
   putNav();

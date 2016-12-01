@@ -58,3 +58,25 @@ nav {
   }
 }
 
+/* Responsive: Portrait tablets and up */
+//@media screen and (max-width: 768px) {
+//  nav ul {
+//    .point {
+//      display: none;
+//    }
+//    li {
+//      display: block;
+//    }
+//
+//    li:not(.point) {
+//      display: none;
+//    }
+//  }
+//}
+
+
+@media screen and (max-width: 1000px) {
+  #nav_left_box, #nav_right_img {
+    display: none;
+  }
+}
