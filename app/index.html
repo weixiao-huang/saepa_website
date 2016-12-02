@@ -22,27 +22,24 @@
   <div class="container">
     {% include 'stretchy-nav.html' with index %}
 
+    {% set items = [
+        { url: './images/5.png', alt: '公益创造快乐', text1: '公益——是一门', text2: '社会必修课'},
+        { url: './images/6.png', alt: '知识改变命运', text1: '　知识改变命运，', text2: '　实践检验真知！'},
+        { url: './images/7.png', alt: '一个团队，一起努力', text1: '　一个团队，', text2: '　一起努力！'},
+      ]
+    %}
     <div class="icon_group cn_fonts">
-      <div class="col-md-4">
-        <img src="./images/5.png" alt="公益创造快乐">
+      {% for item in items %}
+      <div class="icon_box col-md-4">
+        <img src="{{ item.url }}" alt="{{ item.alt }}">
         <div class="icon_text">
-          <p>公益——是一门</p><p>社会必修课</p><p>—</p>
+          <p>{{ item.text1 }}</p><p>{{ item.text2 }}</p><p>—</p>
         </div>
       </div>
-      <div class="col-md-4">
-        <img src="./images/6.png" alt="知识改变命运">
-        <div class="icon_text">
-          <p>　知识改变命运，</p><p>　实践检验真知！</p><p>—</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <img src="./images/7.png" alt="一个团队，一起努力">
-        <div class="icon_text">
-          <p>　一个团队，</p><p>　一起努力！</p><p>—</p>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
+
 
   <div class="container cn_fonts">
     <div class="intro">

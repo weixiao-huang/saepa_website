@@ -23,6 +23,9 @@ $nav_line_width_solo: 3px;
 }
 
 nav {
+  .nav_toggle, .logo {
+    display: none;
+  }
   background-color: rgba(255, 255, 255, 1);
   ul {
     margin:0;
@@ -38,10 +41,6 @@ nav {
       padding: 10px;
       transition: 0.6s;
 
-      &:not(.point):hover {
-        border-bottom: $nav_hover $nav_line_width_solo solid;
-      }
-
       a {
         padding: 14px 0;
         &:hover,
@@ -51,6 +50,9 @@ nav {
           color: #333;
         }
       }
+    }
+    .normal:hover {
+      border-bottom: $nav_hover $nav_line_width_solo solid;
     }
     .active {
       border-bottom: $nav_hover $nav_line_width_solo solid;
@@ -78,5 +80,68 @@ nav {
 @media screen and (max-width: 1000px) {
   #nav_left_box, #nav_right_img {
     display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  nav {
+    .logo {
+      display: block;
+      position: absolute;
+    }
+    ul {
+      padding: 0;
+      .point {
+        display: none;
+      }
+      .normal {
+        padding: 0;
+        width: 100vw;
+        display: block;
+        overflow: hidden;
+        max-height: 0;
+      }
+      .active, .normal, .nav_toggle, .logo {
+        border-bottom: 0;
+      }
+      .nav_toggle {
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+      }
+      .nav_toggle {
+        float: right;
+        padding: 10px;
+      }
+
+      input {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+      }
+      input[type="checkbox"]:focus{
+        outline: 0;
+      }
+      li label {
+        cursor: pointer;
+      }
+
+      input + li label:after {
+        content: "☰";
+      }
+
+      input:checked + li label:after {
+        content: "☰";
+      }
+
+      input:checked ~ .normal {
+        max-height: 150px;
+        padding: 10px 0;
+        border-bottom: 1px #aaa solid;
+        &.active, &:hover {
+          border-bottom: 1px #572A7B solid;
+        }
+      }
+    }
   }
 }

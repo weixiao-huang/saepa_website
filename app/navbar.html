@@ -8,15 +8,20 @@
 
 <nav>
   <div id="nav_left_box"></div>
+  <div class="logo">
+    <img src="./images/协会logo.jpg">
+  </div>
   <ul>
+    <input class="nav_toggle" type="checkbox" name="toggle" id="toggle">
+    <li class="nav_toggle"><label for="toggle" class="nav_icon"></label></li>
     {% for item in items %}
       <li class="point">&middot;</li>
       {% if loop.index0 === 3 %}
-        <li><a href="{{ item.path }}" target="_blank">{{ item.text }}</a></li>
+        <li class="normal"><a href="{{ item.path }}" target="_blank">{{ item.text }}</a></li>
       {% elseif loop.index0 === index %}
-        <li class="active"><a href="{{ item.path }}">{{ item.text }}</a></li>
+        <li class="normal active"><a href="{{ item.path }}">{{ item.text }}</a></li>
       {% else %}
-        <li><a href="{{ item.path }}">{{ item.text }}</a></li>
+        <li class="normal"><a href="{{ item.path }}">{{ item.text }}</a></li>
       {% endif %}
     {% endfor %}
     <li class="point">&middot;</li>
