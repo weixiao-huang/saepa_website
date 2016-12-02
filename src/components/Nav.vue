@@ -3,7 +3,7 @@
     <nav>
       <div class="left_box"></div>
       <ul class="nav_container">
-        <input class="nav_toggle" type="checkbox" name="toggle" id="toggle">
+        <input type="checkbox" name="toggle" id="toggle">
         <li class="nav_toggle"><label for="toggle" class="nav_icon"></label></li>
         <li class="logo">
           <img src="../images/logo.jpg">
@@ -71,8 +71,10 @@ nav
       display inline-block
       padding 10px 10px
       border-bottom 2px #aaa solid
+    input
+      border 0
 
-    .nav_toggle, .logo
+    input, .logo, .nav_toggle
       display none
 
     .normal
@@ -112,10 +114,13 @@ nav
         border-bottom 0
         display inline-block
       .nav_toggle
+        font-size 25px
         float right
-        padding 10px
+        padding 0 20px
+        margin-top 15px
       .logo
         float left
+        height 60px;
         img
           height 100%
 

@@ -1,4 +1,8 @@
 require('./check-versions')()
+
+var browserSync = require('browser-sync');
+var historyApiFallback = require('connect-history-api-fallback');
+
 var config = require('../config')
 if (!process.env.NODE_ENV) process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
 var path = require('path')
@@ -46,7 +50,7 @@ Object.keys(proxyTable).forEach(function (context) {
 })
 
 // handle fallback for HTML5 history API
-app.use(require('connect-history-api-fallback')())
+app.use(historyApiFallback())
 
 // serve webpack bundle output
 app.use(devMiddleware)
@@ -59,17 +63,39 @@ app.use(hotMiddleware)
 var staticPath = path.posix.join(config.dev.assetsPublicPath, config.dev.assetsSubDirectory)
 app.use(staticPath, express.static('./static'))
 
-module.exports = app.listen(port, function (err) {
-  if (err) {
-    console.log(err)
-    return
-  }
-  var uri = 'http://localhost:' + port
-  console.log('Listening at ' + uri + '\n')
+browserSync({
+  port: 8888,
+  ui: {
+    port: 8889
+  },
+  server: {
+    baseDir: '../src',
 
-  // when env is testing, don't need open it
-  if (process.env.NODE_ENV !== 'testing') {
-    opn(uri)
-  }
+    middleware: [
+      historyApiFallback(),
+      devMiddleware,
+      hotMiddleware
+    ]
+  },
+
+  // no need to watch '*.js' here, webpack will take care of it for us,
+  // including full page reloads if HMR won't work
+  files: [
+    '../src/*.html'
+  ]
 })
+
+// module.exports = app.listen(port, function (err) {
+//   if (err) {
+//     console.log(err)
+//     return
+//   }
+//   var uri = 'http://localhost:' + port
+//   console.log('Listening at ' + uri + '\n')
+//
+//   // when env is testing, don't need open it
+//   if (process.env.NODE_ENV !== 'testing') {
+//     opn(uri)
+//   }
+// })
 
