@@ -2,9 +2,14 @@
   <div class="container">
     <nav>
       <div class="left_box"></div>
-      <ul>
+      <ul class="nav_container">
+        <input class="nav_toggle" type="checkbox" name="toggle" id="toggle">
+        <li class="nav_toggle"><label for="toggle" class="nav_icon"></label></li>
+        <li class="logo">
+          <img src="../images/logo.jpg">
+        </li>
         <template v-for="(item, index) in items">
-          <li>&middot;</li>
+          <li class="point">&middot;</li>
           <router-link :to="item.path" class="normal" tag="li">
             {{ item.text }}
           </router-link>
@@ -52,10 +57,12 @@ export default {
   z-index 1
 
 nav
+  background white
+
   ul
     list-style none
     display inline-block
-    padding 10px
+    padding 22px
     font-size 0
 
     li
@@ -65,10 +72,71 @@ nav
       padding 10px 10px
       border-bottom 2px #aaa solid
 
+    .nav_toggle, .logo
+      display none
+
     .normal
-      cursor: pointer
+      cursor pointer
       &:hover
         border-bottom 2px #572A7B solid
       &.router-link-active
         border-bottom 2px #572A7B solid
+
+@media only screen and (max-width 1000px)
+  .left_box, .right_img
+    display none
+
+@media only screen and (max-width 768px)
+  nav
+    ul
+      padding 0
+
+      .point
+        display none
+
+      .normal
+        padding 0
+        width 100vw
+        display block
+        overflow hidden
+        max-height 0
+        border-bottom 0
+        &.router-link-active
+          border-bottom 0
+        &:hover
+          border-bottom 0
+
+      .nav_toggle, .logo
+        margin 0
+        padding 0
+        border-bottom 0
+        display inline-block
+      .nav_toggle
+        float right
+        padding 10px
+      .logo
+        float left
+        img
+          height 100%
+
+      input, input:before, input:after, input:visited
+        -webkit-appearance none
+        -moz-appearance none
+        appearance none
+      li label
+        cursor pointer
+      input + li label:after
+        content: "☰"
+      input:checked + li label:after
+        content:"☰"
+
+      input:checked ~ .normal
+        max-height 150px
+        padding 10px 0
+        border-bottom 1px #aaa solid
+        &.router-link-active
+          border-bottom 1px #572A7B solid
+        &:hover
+          border-bottom 1px #572A7B solid
+
 </style>
