@@ -58,6 +58,7 @@ export default {
 
 nav
   background white
+  text-align: center
 
   ul
     list-style none
