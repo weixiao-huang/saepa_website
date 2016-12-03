@@ -17,6 +17,7 @@ export default new Router({
   routes: [
     { path: '/', redirect: '/home' },
     { path: '/xuefang', redirect: 'http:///ixuefang.cn/' },
+    { path: '/saepa_website', redirect: '/home' },
     { path: '/home', component: Home },
     { path: '/contact', component: Contact },
     { path: '/projects', component: Projects },
