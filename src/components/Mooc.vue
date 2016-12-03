@@ -7,6 +7,9 @@
 <script>
 export default {
   name: 'mooc',
+  components: {
+
+  },
   data() {
     return {
       msg: 'Welcome to Your Vue.js App',

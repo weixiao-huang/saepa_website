@@ -1,12 +1,18 @@
 <template>
-  <div class="mooc">
-
+  <div class="contact">
+    <back-title title="协会时间轴"></back-title>
+    <back-title title="11.0团队"></back-title>
   </div>
 </template>
 
 <script>
+import BackTitle from './BackTitle';
+
 export default {
   name: 'mooc',
+  components: {
+    BackTitle,
+  },
   data() {
     return {
       msg: 'Welcome to Your Vue.js App',

@@ -10,9 +10,14 @@
         </li>
         <template v-for="(item, index) in items">
           <li class="point">&middot;</li>
-          <router-link :to="item.path" class="normal" tag="li">
-            {{ item.text }}
-          </router-link>
+          <template v-if="item.text == '学方论坛'">
+            <li class="normal"><a :href="item.path" target="_blank">{{ item.text }}</a></li>
+          </template>
+          <template v-else>
+            <router-link :to="item.path" class="normal" tag="li">
+              {{ item.text }}
+            </router-link>
+          </template>
         </template>
         <li class="point">&middot;</li>
       </ul>
@@ -33,7 +38,7 @@ export default {
         { text: '主页', path: '/home' },
         { text: '项目介绍', path: '/projects' },
         { text: 'MOOC', path: '/mooc' },
-        { text: '学方论坛', path: '/xuefang' },
+        { text: '学方论坛', path: 'http://ixuefang.cn/' },
         { text: '联系我们', path: '/contact' },
       ],
     };
@@ -42,13 +47,17 @@ export default {
 </script>
 
 <style lang="stylus">
+a, a:hover, a:active, a:before, a:after, a:visited
+  text-decoration: none
+  color: black
+
 .left_box
   background-color #563d7c
   width 80px
   height 120px
   position absolute
   left 50px
-  z-index 1
+  z-index 10
 
 .right_img
   position absolute

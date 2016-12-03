@@ -21,6 +21,7 @@ module.exports = {
   'rules': {
     // don't require .vue extension when importing
     'global-require': 0,
+    'no-useless-concat': 0,
     'import/extensions': ['error', 'always', {
       'js': 'never',
       'vue': 'never'

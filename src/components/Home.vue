@@ -1,8 +1,7 @@
 <template>
   <div id="home">
-    <div class="jumbotron">
-      <img src="../images/jumbotron/4.jpg">
-    </div>
+    <div class="triangle"></div>
+    <jumbotron class="jumbotron"></jumbotron>
     <div class="container">
       <div class="icon_container">
         <div class="icon_box" v-for="item in items">
@@ -63,8 +62,13 @@
 </template>
 
 <script>
+import Jumbotron from './Jumbotron';
+
 export default {
   name: 'home',
+  components: {
+    Jumbotron,
+  },
   data() {
     return {
       items: [
@@ -78,14 +82,24 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .triangle {
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-top: 50px solid white;
+    position: absolute;
+    top: 90px;
+    left: calc(100vw / 2 - 100px);
+    z-index: 10;
+  }
+
   .jumbotron {
     z-index: -10;
     overflow: hidden;
     max-height: calc(100vh - 90px);
-    img {
-      width: 100%;
-    }
   }
+
   .icon_container {
     font-size: 20px;
     color: #592a7a;
@@ -129,6 +143,9 @@ export default {
 
 
   @media only screen and (max-width: 768px) {
+    .triangle {
+      display: none;
+    }
     .intro {
       margin-top: 40px;
       padding: 0;
