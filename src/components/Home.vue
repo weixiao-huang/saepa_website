@@ -77,7 +77,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
   .jumbotron {
     z-index: -10;
     overflow: hidden;
@@ -93,6 +93,7 @@ export default {
     display: flex;
     justify-content: center;
     .icon_box {
+      text-align: center;
       padding: 0 55px;
       img {
         width: 85%;

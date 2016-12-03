@@ -12,8 +12,11 @@ import Mooc from '../components/Mooc';
 Vue.use(Router);
 
 export default new Router({
+  mode: 'history',
+  hashbang: false,
   routes: [
     { path: '/', redirect: '/home' },
+    { path: '/xuefang', redirect: 'http:///ixuefang.cn/' },
     { path: '/home', component: Home },
     { path: '/contact', component: Contact },
     { path: '/projects', component: Projects },

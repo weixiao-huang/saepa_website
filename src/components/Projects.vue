@@ -63,7 +63,7 @@ export default {
               url: require('../images/projects/xd/1.jpg'),
               alt: '享读计划',
               title: '项目成果',
-              text: '<div>截至2016年暑期，已开展三期享读活动，受益学生千余人，累计给学生带去数千张教学材料，为河南商丘宁陵赵村一中建立图书室并得到学生充分利用；为河北灵寿中学和河北平乡二中增添班级图书角，拓展阅读面。</div><p class="bold">2014年获“清华大学实践梦想计划”支持。</div>',
+              text: '<div>截至2016年暑期，已开展三期享读活动，受益学生千余人，累计给学生带去数千张教学材料，为河南商丘宁陵赵村一中建立图书室并得到学生充分利用；为河北灵寿中学和河北平乡二中增添班级图书角，拓展阅读面。</div><div class="bold">2014年获“清华大学实践梦想计划”支持。</div>',
               order: false,
             },
           ],
@@ -91,7 +91,7 @@ export default {
               url: require('../images/projects/mxkt/1.jpg'),
               alt: '筑梦清华',
               title: '项目成果',
-              text: '<div>截至2016年10月，累计期数逾140次，累计培训清华志愿者超过1200人次，累计受益学生逾十四万人，累计给当地孩子带去超过数万页的教学材料。</div><p class="bold">2016年获北京市志愿服务项目大赛金奖</div><p class="bold">2015年获“北京市小微志愿服务项目支持计划”支持</div><p class="bold">2014-2015学年清华大学学生社团十佳活动（撒爱·支教故事大赛）</div>',
+              text: '<div>截至2016年10月，累计期数逾140次，累计培训清华志愿者超过1200人次，累计受益学生逾十四万人，累计给当地孩子带去超过数万页的教学材料。</div><div class="bold">2016年获北京市志愿服务项目大赛金奖</div><div class="bold">2015年获“北京市小微志愿服务项目支持计划”支持</div><div class="bold">2014-2015学年清华大学学生社团十佳活动（撒爱·支教故事大赛）</div>',
               order: false,
             },
           ],
@@ -105,14 +105,14 @@ export default {
               url: require('../images/projects/cxgzs/cfjh.jpg'),
               alt: '春风计划',
               title: '春风计划',
-              text: '<div>春风计划致力于打造一个有成效、有特点、可持久的大学生社会帮教活动。</div><div>就项目本身而言，我们希望通过和狱方合作，找到既能有效帮助服刑人员改邪归正，又适合大学生参与的社会帮教模式。<div>通过这项活动，我们一方面希望帮助服刑人员树立正确的意识形态，感受到社会的温暖，促进服刑人员积极改造；另一方面，希望能够借助协会和清华大学的社会影响力，促进社会对帮教活动的重视，最终帮助服刑人员更好地回归社会。</div><div>目前，春风计划和北京市第二监狱取得了合作关系，将主要针对参加入监教育的人员进行心理辅导，以更好地帮助他们度过适应期。第一期活动将于2016年11月—12月推出。</div>',
+              text: '<div>春风计划致力于打造一个有成效、有特点、可持久的大学生社会帮教活动。就项目本身而言，我们希望通过和狱方合作，找到既能有效帮助服刑人员改邪归正，又适合大学生参与的社会帮教模式。<div>通过这项活动，我们一方面希望帮助服刑人员树立正确的意识形态，感受到社会的温暖，促进服刑人员积极改造；另一方面，希望能够借助协会和清华大学的社会影响力，促进社会对帮教活动的重视，最终帮助服刑人员更好地回归社会。</div><div>目前，春风计划和北京市第二监狱取得了合作关系，将主要针对参加入监教育的人员进行心理辅导，以更好地帮助他们度过适应期。第一期活动将于2016年11月—12月推出。</div>',
               order: true,
             },
             {
               url: require('../images/projects/cxgzs/zbzj.png'),
               alt: '直播支教',
               title: '直播支教',
-              text: '<div>直播支教致力于解决支教过程中空间的距离，更好地方便志愿者进行支教。本学期SAEPA直播支教项目组与途梦课堂进行合作，联合开展了“途梦-清华SAEPA学霸分享”活动。这个活动面对贫困地区在校的中学生，以线上直播的方式，为远方的孩子们带来一场学习经验分享谈。志愿者将通过QQ视频的方式对学生们进行远程直播支教。每次授课面向3所学校（约200名学生），讲解控制在40分钟左右，并预留20分钟进行答疑。另外，志愿者亦可以通过线上QQ群答疑的方式对同学们进行学习方法的指导。</div><div>途梦（Tomoroe） 邀请各行业优秀的职场人士，通过在线视频方式（QQ视频电话会议系统），向偏远地区学生分享自己的成长经历和职场奋斗故事。从2015年10月28日起，截至目前为止，途梦已经开展了超过100期分享，跨越13个省区，40所学校，影响超过10000名学生。在本次活动中，途梦的老师会对同学们的课件和演讲稿进行修改，并帮助我们联系对口学校。</div>',
+              text: '<div>直播支教致力于解决支教过程中空间的距离，更好地方便志愿者进行支教。本学期SAEPA直播支教项目组与途梦（Tomoroe）课堂进行合作，联合开展了“途梦-清华SAEPA学霸分享”活动。这个活动面对贫困地区在校的中学生，以线上直播的方式，为远方的孩子们带来一场学习经验分享谈。志愿者将通过QQ视频的方式对学生们进行远程直播支教。每次授课面向3所学校（约200名学生），讲解控制在40分钟左右，并预留20分钟进行答疑。另外，志愿者亦可以通过线上QQ群答疑的方式对同学们进行学习方法的指导。途梦邀请各行业优秀的职场人士，通过在线视频方式（QQ视频电话会议系统），向偏远地区学生分享自己的成长经历和职场奋斗故事。从2015年10月28日起，截至目前为止，途梦已经开展了超过100期分享，跨越13个省区，40所学校，影响超过10000名学生。在本次活动中，途梦的老师会对同学们的课件和演讲稿进行修改，并帮助我们联系对口学校。</div>',
               order: false,
             },
             {
@@ -155,20 +155,20 @@ export default {
               alt: '周末支教',
               title: '项目成果',
               text: '<div>截至2016年10月，累计期数逾140次，累计培训清华志愿者超过1200人次，累计受益学生逾十四万人，累计给当地孩子带去超过数万页的教学材料。</div><div class="bold">2016年获北京市志愿服务项目大赛金奖</div><div class="bold">2015年获“北京市小微志愿服务项目支持计划”支持</div><div class="bold">2014-2015学年清华大学学生社团十佳活动（撒爱·支教故事大赛）</div>',
-              order: true,
+              order: false,
             },
           ],
         },
         {
-          title: '周末支教',
-          subtitle: '用周末不长的时间，做一生难忘的事情',
-          text: '在清华大学教育扶贫办公室的帮助下，协会与河南滑县抗大初中、河南滑县新区实验小学、河北魏县一中、河北行唐一中、河北宣化四中、河北平乡二中等共十余所中小学建立了长期合作关系，组织清华志愿者在学期中用周末的时间在当地开展支教活动。',
+          title: '撒爱论坛',
+          subtitle: '撒爱论坛一句话简介',
+          text: '撒爱论坛为支教志愿者、社会公益组织、基金会等公益力量搭建了 交流的平台，在交流与讨论中，使各方形成了对大学生支教现状的 共识，并在此基础上对支教中存在的问题进行了总结反思，提出了 切实可行的解决方案，有利于志愿者的不断成长，推进公益组织发 展形式的改进与创新。 此外，“撒爱论坛”希望能通过论坛的交流，一定程度上化解部分志 愿者对公益的质疑，鼓励更多的人参与教育扶贫、关注社会公益事业。',
           boxes: [
             {
-              url: require('../images/projects/dnca/1.jpg'),
-              alt: '周末支教',
+              url: require('../images/projects/salt/1.jpg'),
+              alt: '撒爱论坛',
               title: '项目成果',
-              text: '<p class="bold">2009年,获得清华⼤大学公益创业实践赛“优秀团队”荣誉;</div><p class="bold">2010年,获得“北极光-清华”全国大学生公益创业实践赛银奖;</div><p class="bold">2010、2011年，2次获得清华⼤大学暑期社会实践奖金奖(暑期实践最高荣誉);</div><p class="bold">2012年,获得⾸首届“阿克苏诺贝尔”全国大学生社会公益⽐赛全国金奖(前5名荣誉);</div><p class="bold">2013年,获得清华⼤大学“精品素质拓展项⽬目”荣誉(校内素质拓展活动最高荣誉)</div><p class="bold">2013年,成为新浪微博“圆梦中国”长期线上微公益活动成员组织。</div>',
+              text: '求文案',
               order: true,
             },
           ],
@@ -179,97 +179,102 @@ export default {
 };
 </script>
 
+
 <style lang="scss" scoped>
-  .order-1 {
-    order:1;
+.order-1 {
+  order:1;
+}
+.order-2 {
+  order: 2;
+}
+
+.jumb {
+  img {
+    width: 100%;
   }
-  .order-2 {
-    order: 2;
+}
+
+.container {
+  margin: 40px;
+}
+
+.project {
+  margin: 50px 0;
+  padding-top: 1px;
+  background: white;
+  box-shadow: 2px 2px 10px #666;
+}
+.intro {
+  margin: 10px;
+  padding: 20px 40px;
+  border: 1px #d6d6d6 solid;
+  .titleBox {
+    border-left: 5px #563d7c solid;
+    .title {
+      font-size: 3rem;
+    }
+    .title, .subtitle {
+      margin-left: 30px;
+    }
   }
-  .jumb {
+  .project_text {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+
+    -webkit-column-gap: 50px;
+    -moz-column-gap: 50px;
+    column-gap: 50px;;
+
+    padding: 30px;
+    font-size: 16px;
+  }
+}
+.flex_boxes {
+  display: flex;
+  .p_box {
+    flex: 1;
+    overflow: hidden;
     img {
-      width: 100%;
+      height: 100%;
+      width: 100%
     }
   }
-
-  .container {
-    margin: 40px;
-  }
-
-  .project {
-    margin: 50px 0;
-    padding-top: 1px;
-    background: white;
-    box-shadow: 2px 2px 10px #666;
-  }
-  .intro {
-    margin: 10px;
-    padding: 20px 40px;
-    border: 1px #d6d6d6 solid;
-    .titleBox {
-      border-left: 5px #563d7c solid;
-      .title {
-        font-size: 3rem;
-      }
-      .title, .subtitle {
-        margin-left: 30px;
-      }
-    }
-    .project_text {
-      -webkit-column-count: 2;
-      -moz-column-count: 2;
-      column-count: 2;
-
-      -webkit-column-gap: 50px;
-      -moz-column-gap: 50px;
-      column-gap: 50px;;
-
-      padding: 30px;
-      font-size: 16px;
-    }
-  }
-  .flex_boxes {
+  .t_box {
     display: flex;
-    .p_box {
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .box {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
       flex: 1;
-      img {
-        width: 100%;
-        overflow: hidden;
+      .bold {
+        font-weight: bold;
       }
     }
-    .t_box {
-      display: flex;
-      flex: 1;
-      justify-content: center;
+    .box_title {
       align-items: center;
-      flex-direction: column;
-      .box {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        flex: 1;
-        .bold {
-          font-weight: bold;
-        }
-      }
-      .box_title {
-        align-items: center;
-        background: #04363d;
-        width: 100%;
-        color: white;
-        font-size: 4rem;
-      }
-      .box_text {
-        padding: 50px;
-        font-size: 15px;
-        div {
-          padding-top: 5px;
-        }
+      background: #04363d;
+      width: 100%;
+      color: white;
+      font-size: 4rem;
+    }
+    .box_text {
+      padding: 60px;
+      font-size: 15px;
+      div {
+        padding-top: 5px;
       }
     }
   }
+}
 
-  @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
+  .container {
+    margin: -40px 15px 0 15px;
     .flex_boxes {
       flex-direction:column;
       .p_box {
@@ -281,7 +286,8 @@ export default {
         }
         .box_text {
           font-size: 14px;
-          padding: 50px 20px;
+          height: 100%;
+          padding: 80px 20px;
         }
         order: 1;
       }
@@ -308,4 +314,5 @@ export default {
       }
     }
   }
+}
 </style>
