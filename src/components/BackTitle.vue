@@ -2,7 +2,7 @@
   <div class="container">
     <div class="titleBox"
          :style="{
-           background: 'url(' + img + ') no-repeat center center',
+           background: img + ' no-repeat center center',
          }"
     >
       <div class="arrow-up"></div>
@@ -19,8 +19,10 @@ export default {
   props: ['title', 'src'],
   name: 'backtitle',
   data() {
+    const str = 'url(';
+    const str2 = ')';
     return {
-      img: require('../images/2.jpg'),
+      img: str.concat(this.src).concat(str2),
     };
   },
 };

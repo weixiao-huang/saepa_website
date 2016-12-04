@@ -1,7 +1,7 @@
 <template>
   <div class="contact">
-    <back-title title="协会时间轴"></back-title>
-    <back-title title="11.0团队"></back-title>
+    <back-title :src="timeline.src" :title="timeline.title"></back-title>
+    <back-title :src="saepa11.src" :title="saepa11.title"></back-title>
   </div>
 </template>
 
@@ -15,7 +15,14 @@ export default {
   },
   data() {
     return {
-      msg: 'Welcome to Your Vue.js App',
+      timeline: {
+        title: '协会时间轴',
+        src: require('../images/1.jpg'),
+      },
+      saepa11: {
+        title: '11.0团队',
+        src: require('../images/2.jpg'),
+      },
     };
   },
 };
