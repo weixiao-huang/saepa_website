@@ -47,6 +47,12 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+$fontSize = 20px
+$fontPadding = 10px
+$padding = 20px
+$borderSize = 2px
+$navHeight = $fontSize + $fontPadding * 2 + $padding * 2 + $borderSize
+
 a, a:hover, a:active, a:before, a:after, a:visited
   text-decoration: none
   color: black
@@ -64,6 +70,8 @@ a, a:hover, a:active, a:before, a:after, a:visited
   right 10px
   top 0
   z-index 1
+  img
+    height $navHeight
 
 nav
   background white
@@ -72,15 +80,16 @@ nav
   ul
     list-style none
     display inline-block
-    padding 22px
+    padding $padding
     font-size 0
 
     li
-      font-size 20px
+      font-size $fontSize
+      line-height $fontSize
       transition 0.5s
       display inline-block
-      padding 10px 10px
-      border-bottom 2px #aaa solid
+      padding $fontPadding
+      border-bottom $borderSize #aaa solid
     input
       border 0
 
@@ -90,9 +99,9 @@ nav
     .normal
       cursor pointer
       &:hover
-        border-bottom 2px #572A7B solid
+        border-bottom $borderSize #572A7B solid
       &.router-link-active
-        border-bottom 2px #572A7B solid
+        border-bottom $borderSize #572A7B solid
 
 @media only screen and (max-width 1000px)
   .left_box, .right_img
@@ -127,7 +136,7 @@ nav
         font-size 25px
         float right
         padding 0 20px
-        margin-top 15px
+        margin-top 25px
       .logo
         float left
         height 60px;

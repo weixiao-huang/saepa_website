@@ -6,7 +6,7 @@
   z-index: 1;
 }
 .slider-container {
-  height: calc(100vh - 90px);
+  height: calc(100vh - 82px);
   max-height: calc(100vw * 9 / 16);
   width: 100%;
 }

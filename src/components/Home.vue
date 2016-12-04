@@ -85,12 +85,12 @@ export default {
   .triangle {
     width: 0;
     height: 0;
-    border-left: 150px solid transparent;
-    border-right: 150px solid transparent;
-    border-top: 60px solid white;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-top: 40px solid white;
     position: absolute;
     top: 80px;
-    left: calc(100vw / 2 - 150px);
+    left: calc(100vw / 2 - 100px);
     z-index: 5;
   }
 
