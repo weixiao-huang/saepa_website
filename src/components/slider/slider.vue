@@ -6,8 +6,8 @@
   z-index: 1;
 }
 .slider-container {
-  height: 100vh;
-  max-height: 100vh;
+  height: calc(100vh - 90px);
+  max-height: calc(100vw * 9 / 16);
   width: 100%;
 }
 .slider-center-center{
@@ -64,7 +64,7 @@
   z-index: 10;
 }
 .slider-pagination-bullets{
-  bottom: 10px;
+  bottom: 5%;
   left: 0;
   width: 100%;
 }
@@ -73,7 +73,7 @@
   border-radius: 100%;
   display: inline-block;
   height: 8px;
-  opacity: 0.2;
+  opacity: 0.3;
   width: 8px;
   cursor: pointer;
   margin: 0 5px;
@@ -121,7 +121,6 @@
 /*移动端优化*/
  @media screen and (max-width:414px) {
     .slider-container {
-      max-height: calc(100vw * 9 / 16);
       width: 100%;
     }
 }

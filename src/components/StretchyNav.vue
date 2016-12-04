@@ -57,6 +57,9 @@ export default {
   li {
     list-style-type: none;
   }
+  a, a:hover, a:active, a:before, a:after, a:visited {
+    text-decoration: none;
+  }
 
   /* --------------------------------
 

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <navbar></navbar>
+    <navbar :class="navbar"></navbar>
     <stretchy-nav
       :scroll="scroll"
       :class="{'show': scroll, 'hidden': !scroll}"
@@ -47,9 +47,6 @@ export default {
   $animate_time: 1s;
   .view {
     background-color: #f8f9fb;
-  }
-  #app {
-    overflow-y: scroll
   }
   .hidden {
     opacity: 0;

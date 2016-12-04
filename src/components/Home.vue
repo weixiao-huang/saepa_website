@@ -85,19 +85,13 @@ export default {
   .triangle {
     width: 0;
     height: 0;
-    border-left: 100px solid transparent;
-    border-right: 100px solid transparent;
-    border-top: 50px solid white;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    border-top: 60px solid white;
     position: absolute;
-    top: 90px;
-    left: calc(100vw / 2 - 100px);
-    z-index: 10;
-  }
-
-  .jumbotron {
-    z-index: -10;
-    overflow: hidden;
-    max-height: calc(100vh - 90px);
+    top: 80px;
+    left: calc(100vw / 2 - 150px);
+    z-index: 5;
   }
 
   .icon_container {

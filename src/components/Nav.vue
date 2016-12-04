@@ -46,7 +46,7 @@ export default {
 };
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 a, a:hover, a:active, a:before, a:after, a:visited
   text-decoration: none
   color: black
