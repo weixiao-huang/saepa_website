@@ -1,6 +1,6 @@
 <template>
   <div class="contact">
-    <back-title :src="timeline.src" :title="timeline.title"></back-title>
+    <back-title :src="time.src" :title="time.title"></back-title>
     <timeline></timeline>
     <back-title :src="saepa11.src" :title="saepa11.title"></back-title>
   </div>
@@ -18,7 +18,7 @@ export default {
   },
   data() {
     return {
-      timeline: {
+      time: {
         title: '协会时间轴',
         src: require('../images/1.jpg'),
       },

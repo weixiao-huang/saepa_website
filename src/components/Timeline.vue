@@ -1,14 +1,16 @@
 <template>
   <div class="timeline">
-    <div>This is my Timeline!</div>
+    <div>{{ title }}</div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'time',
+  name: 'timeline',
   data() {
-
+    return {
+      title: 'This is my Timeline!',
+    };
   },
 };
 </script>
