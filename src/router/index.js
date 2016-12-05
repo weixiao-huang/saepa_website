@@ -39,11 +39,10 @@ export default new Router({
   scrollBehavior,
   hashbang: false,
   routes: [
-    { path: '/', redirect: '/home' },
-    { path: '/saepa_website', redirect: '/home' },
     { path: '/home', component: Home },
     { path: '/contact', component: Contact },
     { path: '/projects', component: Projects },
     { path: '/mooc', component: Mooc },
+    { path: '/:id?', redirect: '/home' },
   ],
 });
