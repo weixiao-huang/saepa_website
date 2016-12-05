@@ -53,12 +53,16 @@ $padding = 20px
 $borderSize = 2px
 $navHeight = $fontSize + $fontPadding * 2 + $padding * 2 + $borderSize
 
+$navBackgroundColor = #f8f9fb
+$navLineColor = #cdccca
+$navLineActiveColor = #612379
+
 a, a:hover, a:active, a:before, a:after, a:visited
   text-decoration: none
   color: black
 
 .left_box
-  background-color #563d7c
+  background-color $navLineActiveColor
   width 80px
   height 120px
   position absolute
@@ -66,15 +70,15 @@ a, a:hover, a:active, a:before, a:after, a:visited
   z-index 10
 
 .right_img
+  mix-blend-mode: multiply;
   position absolute
   right 10px
   top 0
-  z-index 1
   img
     height $navHeight
 
 nav
-  background white
+  background $navBackgroundColor
   text-align: center
 
   ul
@@ -89,7 +93,7 @@ nav
       transition 0.5s
       display inline-block
       padding $fontPadding
-      border-bottom $borderSize #aaa solid
+      border-bottom $borderSize $navLineColor solid
     input
       border 0
 
@@ -99,9 +103,9 @@ nav
     .normal
       cursor pointer
       &:hover
-        border-bottom $borderSize #572A7B solid
+        border-bottom $borderSize $navLineActiveColor solid
       &.router-link-active
-        border-bottom $borderSize #572A7B solid
+        border-bottom $borderSize $navLineActiveColor solid
 
 @media only screen and (max-width 1000px)
   .left_box, .right_img
@@ -138,6 +142,7 @@ nav
         padding 0 20px
         margin-top 25px
       .logo
+        mix-blend-mode: multiply;
         float left
         height 60px;
         img
@@ -157,10 +162,10 @@ nav
       input:checked ~ .normal
         max-height 150px
         padding 10px 0
-        border-bottom 1px #aaa solid
+        border-bottom 1px $navLineColor solid
         &.router-link-active
-          border-bottom 1px #572A7B solid
+          border-bottom 1px $navLineActiveColor solid
         &:hover
-          border-bottom 1px #572A7B solid
+          border-bottom 1px $navLineActiveColor solid
 
 </style>

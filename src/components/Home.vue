@@ -83,11 +83,9 @@ export default {
 
 <style lang="scss" scoped>
   .triangle {
-    width: 0;
-    height: 0;
     border-left: 100px solid transparent;
     border-right: 100px solid transparent;
-    border-top: 40px solid white;
+    border-top: 40px solid #f8f9fb;
     position: absolute;
     top: 80px;
     left: calc(100vw / 2 - 100px);
@@ -96,7 +94,7 @@ export default {
 
   .icon_container {
     font-size: 20px;
-    color: #592a7a;
+    color: #612379;
     margin-top: 70px;
     display: flex;
     justify-content: center;
