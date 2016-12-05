@@ -1,17 +1,20 @@
 <template>
   <div class="contact">
     <back-title :src="timeline.src" :title="timeline.title"></back-title>
+    <timeline></timeline>
     <back-title :src="saepa11.src" :title="saepa11.title"></back-title>
   </div>
 </template>
 
 <script>
 import BackTitle from './BackTitle';
+import Timeline from './Timeline';
 
 export default {
   name: 'mooc',
   components: {
     BackTitle,
+    Timeline,
   },
   data() {
     return {
