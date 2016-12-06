@@ -43,24 +43,24 @@ export default {
 };
 </script>
 
-<style lang="scss">
-  $animate_time: 1s;
-  .view {
-    background-color: #f8f9fb;
-  }
-  .hidden {
-    opacity: 0;
-    visibility: hidden;
-    -webkit-transition: $animate_time;
-    -moz-transition: $animate_time;
-    transition: $animate_time;
-  }
-  .show {
-    opacity: 1;
-    visibility: visible;
-    -webkit-transition: $animate_time;
-    -moz-transition: $animate_time;
-    transition: $animate_time;
-  }
+<style lang="stylus">
+  $defaultFonts = "华文细黑", "Microsoft YaHei", "微软雅黑", Helvetica, Tahoma, Arial, STXihei, sans-serif
+  $animateTime = 1s
+  $backgroundColor = #f8f9fb
+  body, header
+    margin 0
+    padding 0
+    background-color $backgroundColor
+    font-family $defaultFonts
+  .hidden, .show
+    -webkit-transition $animateTime
+    -moz-transition $animateTime
+    transition $animateTime
+  .hidden
+    opacity 0
+    visibility hidden
+  .show
+    opacity 1
+    visibility visible
 </style>
 

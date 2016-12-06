@@ -53,7 +53,6 @@ $padding = 20px
 $borderSize = 2px
 $navHeight = $fontSize + $fontPadding * 2 + $padding * 2 + $borderSize
 
-$navBackgroundColor = #f8f9fb
 $navLineColor = #cdccca
 $navLineActiveColor = #612379
 
@@ -78,7 +77,6 @@ a, a:hover, a:active, a:before, a:after, a:visited
     height $navHeight
 
 nav
-  background $navBackgroundColor
   text-align: center
 
   ul
