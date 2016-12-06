@@ -53,13 +53,8 @@ $padding = 20px
 $borderSize = 2px
 $navHeight = $fontSize + $fontPadding * 2 + $padding * 2 + $borderSize
 
-$navBackgroundColor = #f8f9fb
 $navLineColor = #cdccca
 $navLineActiveColor = #612379
-
-a, a:hover, a:active, a:before, a:after, a:visited
-  text-decoration: none
-  color: black
 
 .left_box
   background-color $navLineActiveColor
@@ -78,15 +73,12 @@ a, a:hover, a:active, a:before, a:after, a:visited
     height $navHeight
 
 nav
-  background $navBackgroundColor
   text-align: center
-
   ul
     list-style none
     display inline-block
     padding $padding
     font-size 0
-
     li
       font-size $fontSize
       line-height $fontSize
@@ -96,10 +88,8 @@ nav
       border-bottom $borderSize $navLineColor solid
     input
       border 0
-
     input, .logo, .nav_toggle
       display none
-
     .normal
       cursor pointer
       &:hover
@@ -115,10 +105,8 @@ nav
   nav
     ul
       padding 0
-
       .point
         display none
-
       .normal
         padding 0
         width 100vw
@@ -130,7 +118,6 @@ nav
           border-bottom 0
         &:hover
           border-bottom 0
-
       .nav_toggle, .logo
         margin 0
         padding 0
@@ -147,7 +134,6 @@ nav
         height 60px;
         img
           height 100%
-
       input, input:before, input:after, input:visited
         -webkit-appearance none
         -moz-appearance none
@@ -158,7 +144,6 @@ nav
         content: "☰"
       input:checked + li label:after
         content:"☰"
-
       input:checked ~ .normal
         max-height 150px
         padding 10px 0
@@ -167,5 +152,4 @@ nav
           border-bottom 1px $navLineActiveColor solid
         &:hover
           border-bottom 1px $navLineActiveColor solid
-
 </style>
