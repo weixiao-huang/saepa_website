@@ -1,31 +1,19 @@
-<template>
-  <div class="no-touch">
-    <div class="cd-stretchy-nav"
-         :class="{'nav-is-visible': toggle && scroll}">
-      <a class="cd-nav-trigger" href="#0"
-         @click="toggle = !toggle"
-      >
-        <span aria-hidden="true"></span>
-      </a>
-      <ul>
-        <template v-for="(item, index) in items">
-          <template v-if="item.text == '学方论坛'">
-            <li><a :href="item.path" target="_blank">
-              <span>{{ item.text }}</span>
-            </a></li>
-          </template>
-          <template v-else>
-            <li>
-              <router-link :to="item.path">
-                <span>{{ item.text }}</span>
-              </router-link>
-            </li>
-          </template>
-        </template>
-      </ul>
-      <span aria-hidden="true" class="stretchy-nav-bg"></span>
-    </div>
-  </div>
+<template lang="pug">
+  .no-touch
+    .cd-stretchy-nav(:class="{'nav-is-visible': toggle && scroll}")
+      a.cd-nav-trigger(href="#0", @click="toggle = !toggle")
+        span(aria-hidden="true")
+      ul
+        template(v-for="(item, index) in items")
+          template(v-if="item.text == '学方论坛'")
+            li
+              a(:href="item.path" target="_blank")
+                span {{ item.text }}
+          template(v-else)
+            li
+              router-link(:to="item.path")
+                span {{ item.text }}
+      span.stretchy-nav-bg(aria-hidden="true")
 </template>
 
 <script>

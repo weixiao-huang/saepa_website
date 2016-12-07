@@ -1,64 +1,47 @@
-<template>
-  <div id="home">
-    <div class="triangle"></div>
-    <jumbotron class="jumbotron"></jumbotron>
-    <div class="container">
-      <div class="icon_container">
-        <div class="icon_box" v-for="item in items">
-          <img :src="item.url" :alt="item.alt">
-          <div class="icon_text">
-            <p>{{ item.text1 }}</p>
-            <p>{{ item.text2 }}</p>
-            <p>—</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="projects">
-        <div class="intro">
-          <div class="achievements">
-            <div class="picSide">
-              <img src="../images/cx1.png" alt="创新工作室">
-            </div>
-            <div class="textSide">实践公益新想法<br>探索公益新领域</div>
-            <div class="picSide">
-              <img src="../images/cx2.png" alt="创新工作室">
-            </div>
-          </div>
-
-          <div class="achievements">
-            <div class="picSide">
-              <img src="../images/dnca1.png" alt="电脑传爱">
-            </div>
-            <div class="picSide">
-              <img src="../images/dnca2.png" alt="电脑传爱">
-            </div>
-            <div class="textSide">互联网+科技+公益</div>
-          </div>
-
-          <div class="achievements">
-            <div class="textSide">梦想<br>是给孩子最好的礼物</div>
-            <div class="picSide">
-              <img src="../images/mxkt1.png" alt="梦想课堂">
-            </div>
-            <div class="picSide">
-              <img src="../images/mxkt2.png" alt="梦想课堂">
-            </div>
-          </div>
-
-          <div class="achievements">
-            <div class="picSide">
-              <img src="../images/zmzj1.png" alt="周末支教">
-            </div>
-            <div class="textSide">用周末不长的时间<br>做一生难忘的事情</div>
-            <div class="picSide">
-              <img src="../images/zmzj2.png" alt="周末支教">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<template lang="pug">
+  #home
+    .triangle
+    jumbotron.jumbotron
+    .container
+      .icon_container
+        .icon_box(v-for="item in items")
+          img(:src="item.url", :alt="item.alt")
+          .icon_text
+            p {{ item.text1 }}
+            p {{ item.text2 }}
+            p —
+      .projects
+        .intro
+          .achievements
+            .picSide
+              img(src="../images/cx1.png", alt="创新工作室")
+            .textSide.
+               实践公益新想法
+               探索公益新领域
+            .picSide
+              img(src="../images/cx2.png", alt="创新工作室")
+          .achievements
+            .picSide
+              img(src="../images/dnca1.png", alt="电脑传爱")
+            .picSide
+              img(src="../images/dnca2.png", alt="电脑传爱")
+            .textSide 互联网+科技+公益
+          .achievements
+            .textSide.
+              梦想
+              是给孩子最好的礼物
+            .picSide
+              img(src="../images/mxkt1.png", alt="梦想课堂")
+            .picSide
+              img(src="../images/mxkt2.png", alt="梦想课堂")
+          .achievements
+            .picSide
+              img(src="../images/zmzj1.png", alt="周末支教")
+            .textSide.
+              用周末不长的时间
+              做一生难忘的事情
+            .picSide
+              img(src="../images/zmzj2.png", alt="周末支教")
 </template>
 
 <script>

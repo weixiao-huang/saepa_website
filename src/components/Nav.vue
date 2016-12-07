@@ -1,31 +1,23 @@
-<template>
-  <div class="container">
-    <nav>
-      <div class="left_box"></div>
-      <ul class="nav_container">
-        <input type="checkbox" name="toggle" id="toggle">
-        <li class="nav_toggle"><label for="toggle" class="nav_icon"></label></li>
-        <li class="logo">
-          <img src="../images/logo.jpg">
-        </li>
-        <template v-for="(item, index) in items">
-          <li class="point">&middot;</li>
-          <template v-if="item.text == '学方论坛'">
-            <li class="normal"><a :href="item.path" target="_blank">{{ item.text }}</a></li>
-          </template>
-          <template v-else>
-            <router-link :to="item.path" class="normal" tag="li">
-              {{ item.text }}
-            </router-link>
-          </template>
-        </template>
-        <li class="point">&middot;</li>
-      </ul>
-      <div class="right_img">
-        <img src="../images/logo.jpg">
-      </div>
-    </nav>
-  </div>
+<template lang="pug">
+  .container
+    nav
+      .left_box
+      ul.nav_container
+        input#toggle(type="checkbox", name="toggle")
+        li.nav_toggle
+          label.nav_icon(for="toggle")
+        li.logo
+          img(src="../images/logo.jpg")
+        template(v-for="(item, index) in items")
+          li.point &middot;
+          template(v-if = "item.text == '学方论坛'")
+            li.normal
+              a(:href="item.path", target="_blank") {{ item.text }}
+          template(v-else)
+            router-link.normal(:to="item.path", tag="li") {{ item.text }}
+        li.point &middot;
+      .right_img
+        img(src="../images/logo.jpg")
 </template>
 
 <script>

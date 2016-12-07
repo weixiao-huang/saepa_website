@@ -1,34 +1,17 @@
-<template>
-  <div class="container">
-    <div class="row">
-      <div v-for="social in socials" class="box">
-        <div class="title">{{ social.title }}</div>
-        <div class="text">
-          <div v-for="text in social.texts">{{ text }}</div>
-        </div>
-      </div>
-      <div class="box">
-        <div class="title">联系我们</div>
-        <div class="text contactBox">
-          <div class="qrcode"><img src="../images/contact/qrcode.jpg"></div>
-          <div>邮箱: saepa_thu@163.com</div>
-          <div>微博: 清华SAEPA</div>
-        </div>
-      </div>
-    </div>
-    <!--<div class="row">-->
-      <!--<div class="box">-->
-        <!--<div class="title">联系我们</div>-->
-        <!--<div class="contactBox">-->
-          <!--<div class="qrcode"><img src="../images/contact/qrcode.jpg"></div>-->
-          <!--<div class="text">-->
-            <!--<div>邮箱: saepa_thu@163.com</div>-->
-            <!--<div>微博: 清华SAEPA</div>-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
-  </div>
+<template lang="pug">
+  .container
+    .row
+      .box(v-for="social in socials")
+        .title {{ social.title }}
+        .text
+          div(v-for="text in social.texts") {{ text }}
+      .box
+        .title 联系我们
+        .text.contactBox
+          .qrcode
+            img(src="../images/contact/qrcode.jpg")
+          div 邮箱: saepa_thu@163.com
+          div 微博: 清华SAEPA
 </template>
 
 <script>

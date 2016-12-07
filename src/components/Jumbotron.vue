@@ -1,9 +1,7 @@
-<template>
-  <div class="jumbotron">
-    <slider :pages="someList" :sliderinit="sliderinit">
-      <!-- slot  -->
-    </slider>
-  </div>
+<template lang="pug">
+  .jumbotron
+    slider(:pages="someList", :sliderinit="sliderinit")
+      //- <!-- slot  -->
 </template>
 
 <script>
@@ -65,4 +63,3 @@ export default {
   },
 };
 </script>
-

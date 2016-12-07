@@ -1,36 +1,27 @@
-<template>
-  <div id="projects">
-    <div class="jumb">
-      <img src="../images/projects/jumb.jpg" alt="我们用精品的项目充实公益">
-    </div>
-    <div class="container">
-      <div v-for="project in projects" class="project">
-        <div class="intro">
-          <div class="titleBox">
-            <div class="title">{{ project.title }}</div>
-            <div class="subtitle">{{ project.subtitle }}</div>
-          </div>
-          <div v-html="project.text" class="project_text"></div>
-        </div>
-        <div v-for="box in project.boxes" class="flex_boxes">
-          <template v-if="box.order === true">
-            <div class="p_box order-1"><img :src="box.url" :alt="box.alt"></div>
-            <div class="t_box order-2">
-              <div class="box box_title">{{ box.title }}</div>
-              <div v-html="box.text" class="box box_text"></div>
-            </div>
-          </template>
-          <template v-else>
-            <div class="p_box order-2"><img :src="box.url" :alt="box.alt"></div>
-            <div class="t_box order-1">
-              <div class="box box_title">{{ box.title }}</div>
-              <div v-html="box.text" class="box box_text"></div>
-            </div>
-          </template>
-        </div>
-      </div>
-    </div>
-  </div>
+<template lang="pug">
+  #projects
+    .jumb
+      img(src="../images/projects/jumb.jpg", alt="我们用精品的项目充实公益")
+    .container
+      .project(v-for="project in projects")
+        .intro
+          .titleBox
+            .title {{ project.title }}
+            .subtitle {{ project.subtitle }}
+          .project_text(v-html="project.text")
+        .flex_boxes(v-for="box in project.boxes")
+          template(v-if="box.order")
+            .p_box.order-1
+              img(:src="box.url", :alt="box.alt")
+            .t_box.order-2
+              .box.box_title {{ box.title }}
+              .box.box_text(v-html="box.text")
+          template(v-else)
+            .p_box.order-2
+              img(:src="box.url", :alt="box.alt")
+            .t_box.order-1
+              .box.box_title {{ box.title }}
+              .box.box_text(v-html="box.text")
 </template>
 
 <script>
