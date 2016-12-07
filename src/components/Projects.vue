@@ -179,10 +179,8 @@ export default {
   order: 2;
 }
 
-.jumb {
-  img {
+.jumb img {
     width: 100%;
-  }
 }
 
 .container {

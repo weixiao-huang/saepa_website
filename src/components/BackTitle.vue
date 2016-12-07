@@ -29,7 +29,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
   $tri_color: #8b09ff;
 
   .container {
@@ -43,9 +42,6 @@ export default {
       flex-direction: column;
       font-size: 50px;
       height: 200px;
-      .title {
-      }
-
       .arrow-down, .arrow-up {
         width: 0;
         height: 0;

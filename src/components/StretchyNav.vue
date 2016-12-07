@@ -38,19 +38,6 @@ export default {
 <style lang="scss" scoped>
   /* --------------------------------
 
-  Primary style
-
-  -------------------------------- */
-
-  li {
-    list-style-type: none;
-  }
-  a, a:hover, a:active, a:before, a:after, a:visited {
-    text-decoration: none;
-  }
-
-  /* --------------------------------
-
   Stretchy Nav style - common to:
    - basic navigation
    - add-content navigation
@@ -60,8 +47,6 @@ export default {
   $nav_color: rgba(168, 151, 122, 0.7);
   $nav_hover_color: #A8977A;
   $background_color: rgba(154, 205, 145, 1);  // #9acd91
-
-  //#9acd91
 
   .cd-stretchy-nav {
     position: fixed;
