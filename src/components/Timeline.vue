@@ -5,7 +5,7 @@
 
       <div v-for="(event, index) in events" class="timeline-item" :id="'time-' + index">
         <div class="timeline-icon">
-          <img src="../images/contact/star.svg" alt="">
+          <!--<img src="../images/contact/star.svg" alt="">-->
         </div>
         <div class="timeline-content" :class="{'right': index % 2 === 0}">
           <h2>{{ event.time }}</h2>
@@ -121,8 +121,6 @@ export default {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
-body, html {
-  height: 100%}
 body {
   background: #f9f9f9;
   background-size: cover;
@@ -135,9 +133,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 img {
-  max-width: 100%}
-a {
-  text-decoration: none;
+  max-width: 100%
 }
 .container {
   max-width: 1100px;
@@ -170,24 +166,27 @@ h1, h2, h3, h4 {
   content: "";
   clear: both;
   display: table;
-  width: 100%}
+  width: 100%
+}
 #timeline .timeline-item {
   margin-bottom: 0px;
   position: relative;
 }
 #timeline .timeline-item .timeline-icon {
   background: #5f2776;
-  width: 50px;
-  height: 50px;
+  width: 20px;
+  height: 20px;
   position: absolute;
   top: 0;
   left: 50%;
   overflow: hidden;
-  margin-left: -23px;
+  margin-left: -9px;
+  margin-top: 15px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   -ms-border-radius: 50%;
-  border-radius: 50%}
+  border-radius: 50%
+}
 #timeline .timeline-item .timeline-icon img {
   position: relative;
   top: 14px;

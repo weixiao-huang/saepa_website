@@ -29,7 +29,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  $tri_color: #8b09ff;
+  $tri_color: white;
 
   .container {
     background-size: cover;
@@ -45,16 +45,16 @@ export default {
       .arrow-down, .arrow-up {
         width: 0;
         height: 0;
-        border-left: 20px solid transparent;
-        border-right: 20px solid transparent;
-        -webkit-filter: drop-shadow(0 1px 2px #000);
-        filter: drop-shadow(0 1px 2px #000);
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        /*-webkit-filter: drop-shadow(0 1px 2px #000);*/
+        /*filter: drop-shadow(0 1px 2px #000);*/
       }
       .arrow-up {
-        border-bottom: 20px solid $tri_color;
+        border-bottom: 10px solid $tri_color;
       }
       .arrow-down {
-        border-top: 20px solid $tri_color;
+        border-top: 10px solid $tri_color;
       }
     }
   }

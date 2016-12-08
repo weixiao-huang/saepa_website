@@ -31,7 +31,7 @@ export default {
         { text: '项目介绍', path: '/projects' },
         { text: 'MOOC', path: '/mooc' },
         { text: '学方论坛', path: 'http://ixuefang.cn/' },
-        { text: '联系我们', path: '/contact' },
+        { text: '关于我们', path: '/contact' },
       ],
     };
   },

@@ -40,7 +40,7 @@ export default {
 
   -------------------------------- */
   $default-fonts = "华文细黑", "Microsoft YaHei", "微软雅黑", Helvetica, Tahoma, Arial, STXihei, sans-serif;
-  $animate_time = 1s;
+  $animate_time = 0.5s;
 
   div
     font-family $default-fonts

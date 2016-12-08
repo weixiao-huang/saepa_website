@@ -1,7 +1,7 @@
-<template>
-  <div class="mooc">
-
-  </div>
+<template lang="pug">
+  #mooc
+    .jumb
+      img(src="../images/mooc.jpg")
 </template>
 
 <script>
@@ -19,6 +19,9 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
-
+<style lang="stylus" scoped>
+  .jumb
+    margin 0
+    img
+      width 100%
 </style>

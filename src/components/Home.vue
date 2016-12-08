@@ -3,13 +3,24 @@
     .triangle
     jumbotron.jumbotron
     .container
-      .icon_container
-        .icon_box(v-for="item in items")
-          img(:src="item.url", :alt="item.alt")
-          .icon_text
-            p {{ item.text1 }}
-            p {{ item.text2 }}
-            p —
+      .first
+        .aboutUs
+          .aboutTitle.
+            关于我们<br>—
+          .aboutContent.
+            清华大学学生教育扶贫公益协会（SAEPA）成立于2006年12月，隶属于
+            清华大学教育扶贫办公室。协会着力于构建一个教育扶贫平台，促进清华
+            学子和中国贫困地区的孩子之间的交流。
+            协会专注于周末支教、电脑传爱、梦想课堂等多个规范化项目，成立10年
+            来已然取得累累硕果。任务魔方、课余时光、享读计划等新增项目更为协
+            会注入活力。
+        .icon_container
+          .icon_box(v-for="item in items")
+            img(:src="item.url", :alt="item.alt")
+            .icon_text
+              p {{ item.text1 }}
+              p {{ item.text2 }}
+              p —
       .projects
         .intro
           .summary
@@ -21,7 +32,7 @@
           .achievements
             .picSide
               img(src="../images/cx1.png", alt="创新工作室")
-            .textSide.borderTop
+            .textSide.borderTop(:style="{ background: textSides[0] }")
               .textTitle 创新工作室
               div.
                 <br>
@@ -34,13 +45,13 @@
               img(src="../images/dnca1.png", alt="电脑传爱")
             .picSide.picRSide
               img(src="../images/dnca2.png", alt="电脑传爱")
-            .textSide
+            .textSide(:style="{ background: textSides[1] }")
               .textTitle 电脑传爱
               div.
                 <br>
                 互联网+科技+公益
           .achievements
-            .textSide
+            .textSide(:style="{ background: textSides[2] }")
               .textTitle 梦想课堂
               div.
                 <br>
@@ -53,7 +64,7 @@
           .achievements
             .picSide
               img(src="../images/zmzj1.png", alt="周末支教")
-            .textSide
+            .textSide(:style="{ background: textSides[3] }")
               .textTitle 周末支教
               div.
                 <br>
@@ -72,11 +83,18 @@ export default {
     Jumbotron,
   },
   data() {
+    const tmp = ') no-repeat center center';
     return {
       items: [
-        { url: require('../images/5.png'), alt: '公益创造快乐', text1: '公益——是一门', text2: '社会必修课' },
+        { url: require('../images/5.png'), alt: '公益创造快乐', text1: '公益是一门', text2: '大学必修课' },
         { url: require('../images/6.png'), alt: '知识改变命运', text1: '　知识改变命运，', text2: '　实践检验真知！' },
         { url: require('../images/7.png'), alt: '一个团队，一起努力', text1: '　一个团队，', text2: '　一起努力！' },
+      ],
+      textSides: [
+        'url(' + require('../images/home/text1.jpg') + tmp,
+        'url(' + require('../images/home/text2.jpg') + tmp,
+        'url(' + require('../images/home/text3.jpg') + tmp,
+        'url(' + require('../images/home/text4.jpg') + tmp,
       ],
     };
   },
@@ -94,23 +112,36 @@ export default {
     z-index: 5;
   }
 
-  .icon_container {
-    font-size: 20px;
-    color: #612379;
-    margin-top: 70px;
-    display: flex;
-    justify-content: center;
-    .icon_box {
+  .first {
+    padding: 30px 100px;
+    .aboutUs {
       text-align: center;
-      padding: 0 55px;
-      img {
-        width: 85%;
+      .aboutTitle {
+        padding: 30px 0;
+        font-size: 30px;
+        color: #612379;
+      }
+      .aboutContent {
+        font-size: 16px;
+        line-height: 25px;
+        padding-bottom: 30px;
+        color: #646466;
       }
     }
-  }
-
-  .borderTop {
-    /*border-top: 1px white solid;*/
+    .icon_container {
+      font-size: 18px;
+      color: #612379;
+      margin-top: 70px;
+      display: flex;
+      justify-content: center;
+      .icon_box {
+        text-align: center;
+        padding: 0 55px;
+        img {
+          width: 85%;
+        }
+      }
+    }
   }
 
   .paddingB {
@@ -118,44 +149,38 @@ export default {
   }
 
   .intro {
-    img {
-      width: 150px;
-      height: 100px;
-     // padding-bottom: 50px;
-    }
     .summary {
       text-align: center;
       font-size: 20px;
       color: white;
-      padding: 100px;
+      padding: 70px;
       background: url("../images/1.jpg") no-repeat center center;
+      background-size: cover;
+      -webkit-background-size: cover;
+      img {
+        width: 150px;
+        height: 100px;
+      }
     }
-    padding: 0 0;
-    /*background: url("../images/1.jpg") no-repeat center center;*/
-    -webkit-background-size: cover;
-    background-size: cover;
     .achievements {
       display: flex;
       .picSide {
         width: 33.333333%;
-        margin: 10px;
         img {
           width: 100%;
           height: 100%;
         }
         overflow: hidden;
-        padding: 0;
       }
       .picLSide {
-        margin-right: 0;
+        margin-right:0;
       }
       .picRSide {
         margin-left: 0;
       }
-
       .textSide {
-        background: #5f2776;
-        margin: 10px;
+        background-size: cover;
+        -webkit-background-size: cover;
         color: white;
         width: 33.333333%;
         text-align: center;
@@ -171,34 +196,41 @@ export default {
     }
   }
 
-
   @media only screen and (max-width: 768px) {
     .triangle {
       display: none;
     }
     .intro {
-      margin-top: 40px;
-      padding: 0;
+      /*margin-top: 40px;*/
+      /*padding: 0;*/
       .achievements .picSide {
         padding: 0;
         margin: 0;
       }
-      font-size: 12px;
-      .achievements {
-        .textSide {
-          .textTitle {
-            font-size: 18px;
-          }
+      font-size: 11px;
+      .achievements .textSide .textTitle {
+        font-size: 15px;
+      }
+      .summary {
+        font-size: 14px;
+        padding: 50px;
+        img {
+          width: 70px;
+          height: 50px;
+          padding: 10px;
         }
       }
     }
-    .icon_container {
-      font-size: 12px;
-      margin-top: 40px;
-      .icon_box {
-        padding: 0;
-        img {
-          width: 85%;
+    .first {
+      padding: 15px;
+      .icon_container {
+        font-size: 12px;
+        margin-top: 40px;
+        .icon_box {
+          padding: 0;
+          img {
+            width: 75%;
+          }
         }
       }
     }

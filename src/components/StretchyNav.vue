@@ -27,7 +27,7 @@ export default {
         { text: '项目介绍', path: '/projects' },
         { text: 'MOOC', path: '/mooc' },
         { text: '学方论坛', path: 'http://ixuefang.cn/' },
-        { text: '联系我们', path: '/contact' },
+        { text: '关于我们', path: '/contact' },
       ],
       toggle: false,
     };
@@ -44,14 +44,14 @@ export default {
    - edit-content navigation
 
   -------------------------------- */
-  $nav_color: rgba(168, 151, 122, 0.7);
-  $nav_hover_color: #A8977A;
-  $background_color: rgb(170, 163, 97);  // #9acd91
+  $nav_color: rgba(255, 255, 255, 0.7);
+  $nav_hover_color: #612379;
+  $background_color: rgb(170, 142, 159);  // #9acd91
 
   .cd-stretchy-nav {
     position: fixed;
     z-index: 2;
-    top: 40px;
+    top: 120px;
     right: 5%;
     pointer-events: none;
   }
@@ -181,6 +181,7 @@ export default {
     -webkit-transition: color 0.2s;
     -moz-transition: color 0.2s;
     transition: color 0.2s;
+    text-shadow: 1px 1px 1px #333 ;
   }
   .cd-stretchy-nav ul a::after {
     /* navigation item icons */

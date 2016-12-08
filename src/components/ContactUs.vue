@@ -1,9 +1,10 @@
-<template>
-  <div class="contact">
-    <back-title :src="time.src" :title="time.title"></back-title>
-    <timeline></timeline>
-    <back-title :src="saepa11.src" :title="saepa11.title"></back-title>
-  </div>
+<template lang="pug">
+  .contact
+    back-title(:src="time.src", :title="time.title")
+    timeline
+    back-title(:src="saepa11.src", :title="saepa11.title")
+    .saepa11
+      img(src="../images/contact/saepa11.0.jpg")
 </template>
 
 <script>
@@ -19,7 +20,7 @@ export default {
   data() {
     return {
       time: {
-        title: '协会时间轴',
+        title: '我们走过的道路',
         src: require('../images/1.jpg'),
       },
       saepa11: {
@@ -32,6 +33,8 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
-
+<style lang="stylus" scoped>
+.saepa11
+  img
+    width 100%
 </style>
