@@ -490,5 +490,10 @@ $animate_time: 0.5s;
       }
     }
   }
+  #subNav ul {
+      margin: 8px;
+      text-align: left;
+  }
+
 }
 </style>
