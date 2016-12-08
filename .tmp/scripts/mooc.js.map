@@ -1,0 +1,1 @@
+{"version":3,"sources":["mooc.js"],"names":["$"],"mappings":";;AAAA;;;;AAIAA,EAAE,YAAY,CAEb,CAFD","file":"mooc.js","sourcesContent":["/**\n * Created by Mike Huang on 2016/11/30.\n */\n\n$(function () {\n\n});\n"]}

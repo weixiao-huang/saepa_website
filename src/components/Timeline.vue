@@ -1,6 +1,20 @@
 <template>
-  <div class="timeline">
-    <div>{{ title }}</div>
+  <div class="container">
+
+    <div id="timeline">
+
+      <div v-for="(event, index) in events" class="timeline-item">
+        <div class="timeline-icon">
+          <img src="../images/contact/star.svg" alt="">
+        </div>
+        <div class="timeline-content" :class="{'right': index % 2 === 0}">
+          <h2>{{ event.time }}</h2>
+          <p v-html="event.detail"></p>
+        </div>
+      </div>
+
+    </div>
+
   </div>
 </template>
 
@@ -10,6 +24,92 @@ export default {
   data() {
     return {
       title: 'This is my Timeline!',
+      events: [
+        {
+          time: '2006.12',
+          detail: '教育扶贫志愿者协会成立。',
+        },
+        {
+          time: '2008.05',
+          detail: '“周末支教”第一期活动成功开展，周末支教项目诞生。',
+        },
+        {
+          time: '2009.05',
+          detail: '“电脑传爱”项目电脑募捐活动展开，电脑传爱项目诞生。',
+        },
+        {
+          time: '2009.08',
+          detail: '“电脑传爱”为内蒙古太仆寺旗兴盛小学捐建了第一间微机室。',
+        },
+        {
+          time: '2009.11',
+          detail: '“电脑传爱”项目获得“北极光-清华”全国大学生公益创业实践赛银奖。',
+        },
+        {
+          time: '2010.10',
+          detail: '“电脑传爱”项目获得清华大学暑期社会实践金奖。',
+        },
+        {
+          time: '2011.10',
+          detail: '“电脑传爱”项目获得清华大学暑期社会实践金奖。',
+        },
+        {
+          time: '2012.08',
+          detail: '“电脑传爱”项目获得首届阿克苏诺贝尔全国大学生社会公益比赛全国金奖(前五名荣誉)。',
+        },
+        {
+          time: '2012.10',
+          detail: '第一次“梦想课堂”活动在北京市顺义区清红蓝小学开展，梦想课堂项目诞生。',
+        },
+        {
+          time: '2013.08',
+          detail: '“梦想课堂”项目获得阿克苏诺贝尔中国大学生社会公益奖金奖(前五名荣誉)。',
+        },
+        {
+          time: '2013.09',
+          detail: '“梦想课堂”项目获得清华大学秋学生素质拓展计划金奖。<br>“电脑传爱”项目获得清华大学“精品素质拓展项目”。<br>"电脑传爱"项目成为新浪微博"圆梦中国"长期线上公益活动员组织课余时光第一期活动开展，课余时光项目诞生。',
+        },
+        {
+          time: '2013.10',
+          detail: '“享读计划”开始酝酿并进入筹备工作。',
+        },
+        {
+          time: '2013.11',
+          detail: '“面对面”农民工子弟专题访谈举行第一期活动，“面对面”项目诞生。',
+        },
+        {
+          time: '2014.02',
+          detail: '创新工作室成立。',
+        },
+        {
+          time: '2014.04',
+          detail: '任务魔方微信平台试运行，任务魔方项目诞生。',
+        },
+        {
+          time: '2014.05',
+          detail: '“课余时光”项目获得清华大学春季学期学生素质拓展计划金奖。',
+        },
+        {
+          time: '2014.06',
+          detail: '"周末支教"完成第100期活动。',
+        },
+        {
+          time: '2014.08',
+          detail: '“享读计划”第一期活动在河南商丘宁陵赵村一中举行，享读计划项目诞生。',
+        },
+        {
+          time: '2014.10',
+          detail: '成功举办首届“撒爱支教故事大赛”。<br>电脑传爱获清华大学暑期实践学生最佳实践奖、二金星流动杯荣誉。',
+        },
+        {
+          time: '2014.11',
+          detail: '“周末支教”受益人数达到十万人。',
+        },
+        {
+          time: '2014.12',
+          detail: '成功举办首届撒爱论坛。',
+        },
+      ],
     };
   },
 };
@@ -17,11 +117,164 @@ export default {
 
 <style lang="scss" scoped>
 
-// 你开发的时候删掉下面这些css样式重写就行
-.timeline {
-  text-align: center;
-  font-size: 50px;
-  padding: 40px;
+#timeline .timeline-item:after,#timeline .timeline-item:before {
+  content: '';
+  display: block;
+  width: 100%;
+  clear: both;
+  z-index: -100;
+}
+*, *:before, *:after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+body, html {
+  height: 100%}
+body {
+  background: #f9f9f9;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  font-family: helvetica, arial, tahoma, verdana;
+  line-height: 20px;
+  font-size: 14px;
+  color: #726f77;
+  -webkit-font-smoothing: antialiased;
+}
+img {
+  max-width: 100%}
+a {
+  text-decoration: none;
+}
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+h1, h2, h3, h4 {
+  font-family: "Dosis", arial, tahoma, verdana;
+  font-weight: 600;
+}
+
+#timeline {
+  width: 90%;
+  margin: 30px auto;
+  position: relative;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+#timeline:before {
+  content: "";
+  width: 3px;
+  height: 100%;
+  background: #5f2776;
+  left: 50%;
+  top: 0;
+  position: absolute;
+}
+#timeline:after {
+  content: "";
+  clear: both;
+  display: table;
+  width: 100%}
+#timeline .timeline-item {
+  margin-bottom: 0px;
+  position: relative;
+}
+#timeline .timeline-item .timeline-icon {
+  background: #5f2776;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  overflow: hidden;
+  margin-left: -23px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%}
+#timeline .timeline-item .timeline-icon img {
+  position: relative;
+  top: 14px;
+  left: 14px;
+}
+#timeline .timeline-item .timeline-content {
+  width: 45%;
+  background: #fff;
+  padding: 20px;
+  -webkit-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.1);
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+#timeline .timeline-item .timeline-content h2 {
+  padding: 15px;
+  background: #5f2776;
+  color: #fff;
+  margin: -20px -20px 0 -20px;
+  font-weight: 500;
+  -webkit-border-radius: 3px 3px 0 0;
+  -moz-border-radius: 3px 3px 0 0;
+  -ms-border-radius: 3px 3px 0 0;
+  border-radius: 3px 3px 0 0;
+}
+#timeline .timeline-item .timeline-content:before {
+  content: '';
+  position: absolute;
+  left: 45%;
+  top: 20px;
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 7px solid #5f2776;
+}
+#timeline .timeline-item .timeline-content.right {
+  float: right;
+}
+#timeline .timeline-item .timeline-content.right:before {
+  content: '';
+  right: 45%;
+  left: inherit;
+  border-left: 0;
+  border-right: 7px solid #5f2776;
+}
+
+@media screen and (max-width: 768px) {
+  #timeline {
+    margin: 30px;
+    padding: 0;
+  }
+  #timeline:before {
+    left: 0;
+  }
+  #timeline .timeline-item {
+    margin: 30px 0;
+  }
+  #timeline .timeline-item .timeline-content {
+    width: 90%;
+    float: right;
+  }
+  #timeline .timeline-item .timeline-content:before, #timeline .timeline-item .timeline-content.right:before {
+    left: 10%;
+    margin-left: -6px;
+    border-left: 0;
+    border-right: 7px solid #5f2776;
+  }
+  #timeline .timeline-item .timeline-icon {
+    left: 0;
+  }
 }
 
 </style>
