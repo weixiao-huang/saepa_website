@@ -3,7 +3,7 @@
 
     <div id="timeline">
 
-      <div v-for="(event, index) in events" class="timeline-item">
+      <div v-for="(event, index) in events" class="timeline-item" :id="'time-' + index">
         <div class="timeline-icon">
           <img src="../images/contact/star.svg" alt="">
         </div>
@@ -42,18 +42,6 @@ export default {
           detail: '“电脑传爱”为内蒙古太仆寺旗兴盛小学捐建了第一间微机室。',
         },
         {
-          time: '2009.11',
-          detail: '“电脑传爱”项目获得“北极光-清华”全国大学生公益创业实践赛银奖。',
-        },
-        {
-          time: '2010.10',
-          detail: '“电脑传爱”项目获得清华大学暑期社会实践金奖。',
-        },
-        {
-          time: '2011.10',
-          detail: '“电脑传爱”项目获得清华大学暑期社会实践金奖。',
-        },
-        {
           time: '2012.08',
           detail: '“电脑传爱”项目获得首届阿克苏诺贝尔全国大学生社会公益比赛全国金奖(前五名荣誉)。',
         },
@@ -70,28 +58,12 @@ export default {
           detail: '“梦想课堂”项目获得清华大学秋学生素质拓展计划金奖。<br>“电脑传爱”项目获得清华大学“精品素质拓展项目”。<br>"电脑传爱"项目成为新浪微博"圆梦中国"长期线上公益活动员组织课余时光第一期活动开展，课余时光项目诞生。',
         },
         {
-          time: '2013.10',
-          detail: '“享读计划”开始酝酿并进入筹备工作。',
-        },
-        {
           time: '2013.11',
           detail: '“面对面”农民工子弟专题访谈举行第一期活动，“面对面”项目诞生。',
         },
         {
-          time: '2014.02',
-          detail: '创新工作室成立。',
-        },
-        {
           time: '2014.04',
           detail: '任务魔方微信平台试运行，任务魔方项目诞生。',
-        },
-        {
-          time: '2014.05',
-          detail: '“课余时光”项目获得清华大学春季学期学生素质拓展计划金奖。',
-        },
-        {
-          time: '2014.06',
-          detail: '"周末支教"完成第100期活动。',
         },
         {
           time: '2014.08',
@@ -102,15 +74,35 @@ export default {
           detail: '成功举办首届“撒爱支教故事大赛”。<br>电脑传爱获清华大学暑期实践学生最佳实践奖、二金星流动杯荣誉。',
         },
         {
-          time: '2014.11',
-          detail: '“周末支教”受益人数达到十万人。',
-        },
-        {
           time: '2014.12',
           detail: '成功举办首届撒爱论坛。',
         },
+        {
+          time: '2015.05',
+          detail: '“秀出你的公益STYLE”校园公益主题嘉年华。',
+        },
+        {
+          time: '2016.10',
+          detail: '“多跑一步，多爱一分”公益助跑活动举办。',
+        },
+        {
+          time: '2016.12',
+          detail: 'SAEPA十周年庆典。',
+        },
       ],
     };
+  },
+  create() {
+    document.addEventListener('scroll', () => {
+      const scrollTop = (document.documentElement.scrollTop ||
+                      window.pageYOffset || document.body.scrollTop);
+      for (let i = 0; i < this.events.length; i++) {
+        const time = document.getElementById('time-' + (i + 1));
+        if (time.offsetTop - 100 > scrollTop) {
+          time.className += ' hidden';
+        }
+      }
+    });
   },
 };
 </script>
@@ -249,6 +241,10 @@ h1, h2, h3, h4 {
   left: inherit;
   border-left: 0;
   border-right: 7px solid #5f2776;
+}
+
+.hidden {
+  opacity: 0;
 }
 
 @media screen and (max-width: 768px) {

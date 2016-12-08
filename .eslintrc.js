@@ -23,6 +23,8 @@ module.exports = {
     'global-require': 0,
     'no-useless-concat': 0,
     'no-console': 0,
+    'no-plusplus': 0,
+    'prefer-template': 0,
     'import/extensions': ['error', 'always', {
       'js': 'never',
       'vue': 'never'

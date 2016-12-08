@@ -1,9 +1,13 @@
 <template lang="pug">
   #projects
+    #subNav(:scroll="scroll", :class="{'show': scroll, 'hidden': !scroll}")
+      ul
+        li.item(v-for="(item, index) in items")
+          a(:href="'#sr' + index") {{ item }}
     .jumb
       img(src="../images/projects/jumb.jpg", alt="我们用精品的项目充实公益")
     .container
-      .project(v-for="project in projects")
+      .project(v-for="(project, index) in projects", :id="'sr' + index")
         .intro
           .titleBox
             .title {{ project.title }}
@@ -30,6 +34,17 @@ export default {
   name: 'app',
   data() {
     return {
+      scroll: false,
+      items: [
+        '周末支教',
+        '享读计划',
+        '梦想课堂',
+        '筑梦清华',
+        '任务魔方',
+        'S-Lab',
+        '电脑传爱',
+        '撒爱论坛',
+      ],
       projects: [
         {
           title: '周末支教',
@@ -167,11 +182,19 @@ export default {
       ],
     };
   },
+  created() {
+    document.addEventListener('scroll', () => {
+      this.scroll = ((document.documentElement.scrollTop ||
+                      window.pageYOffset || document.body.scrollTop) > 400);
+    });
+  },
 };
 </script>
 
 
 <style lang="scss" scoped>
+
+
 .order-1 {
   order:1;
 }
@@ -195,7 +218,7 @@ export default {
 }
 .intro {
   margin: 10px;
-  padding: 20px 40px;
+  padding: 50px 40px 20px 40px;
   border: 1px #d6d6d6 solid;
   .titleBox {
     border-left: 5px #563d7c solid;
@@ -256,6 +279,25 @@ export default {
       font-size: 15px;
       div {
         padding-top: 5px;
+      }
+    }
+  }
+}
+
+
+#subNav {
+  top: 0;
+  position: fixed;
+  width: 100%;
+  background: rebeccapurple;
+  opacity: 0.8;
+  ul {
+    text-align: center;
+    li {
+      display: inline-block;
+      padding: 0 20px;
+      a {
+        color: white;
       }
     }
   }
