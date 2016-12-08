@@ -26,8 +26,8 @@ export default {
   },
   created() {
     document.addEventListener('scroll', () => {
-      this.scroll = document.documentElement.scrollTop ||
-                    window.pageYOffset || document.body.scrollTop > 400;
+      this.scroll = ((document.documentElement.scrollTop ||
+                      window.pageYOffset || document.body.scrollTop) > 400);
     });
   },
 };

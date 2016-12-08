@@ -1,14 +1,12 @@
-<template>
-  <div>
-    <slider :pages="someList" :sliderinit="sliderinit">
-    </slider>
-  </div>
+<template lang="pug">
+  div
+    slider(:pages="someList", :sliderinit="sliderinit")
 </template>
 <script>
 import slider from './slider/slider';
 
 export default {
-  el: 'jumbotron',
+  name: 'jumbotron',
   data() {
     const urls = [
       require('../images/jumbotron/4.jpg'),
