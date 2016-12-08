@@ -46,7 +46,7 @@ export default {
   -------------------------------- */
   $nav_color: rgba(168, 151, 122, 0.7);
   $nav_hover_color: #A8977A;
-  $background_color: rgba(154, 205, 145, 1);  // #9acd91
+  $background_color: rgb(170, 163, 97);  // #9acd91
 
   .cd-stretchy-nav {
     position: fixed;
