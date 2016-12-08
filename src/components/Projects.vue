@@ -28,6 +28,142 @@
               .box.box_text(v-html="box.text")
 </template>
 
+
+<style lang="scss" scoped>
+.order-1 {
+  order:1;
+}
+.order-2 {
+  order: 2;
+}
+
+.jumb img {
+    width: 100%;
+}
+
+.container {
+  margin: 40px;
+}
+
+.project {
+  margin: 50px 0;
+  padding-top: 1px;
+  background: white;
+  box-shadow: 2px 2px 10px #666;
+}
+.intro {
+  margin: 10px;
+  padding: 20px 40px;
+  border: 1px #d6d6d6 solid;
+  .titleBox {
+    border-left: 5px #563d7c solid;
+    .title {
+      font-size: 3rem;
+    }
+    .title, .subtitle {
+      margin-left: 30px;
+    }
+  }
+  .project_text {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+
+    -webkit-column-gap: 50px;
+    -moz-column-gap: 50px;
+    column-gap: 50px;;
+
+    padding: 30px;
+    font-size: 16px;
+  }
+}
+.flex_boxes {
+  display: flex;
+  .p_box {
+    flex: 1;
+    overflow: hidden;
+    img {
+      height: 100%;
+      width: 100%
+    }
+  }
+  .t_box {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .box {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      flex: 1;
+      .bold {
+        font-weight: bold;
+      }
+    }
+    .box_title {
+      align-items: center;
+      background: #04363d;
+      width: 100%;
+      color: white;
+      font-size: 4rem;
+    }
+    .box_text {
+      padding: 60px;
+      font-size: 15px;
+      div {
+        padding-top: 5px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    margin: -40px 15px 0 15px;
+    .flex_boxes {
+      flex-direction:column;
+      .p_box {
+        order: 2;
+      }
+      .t_box {
+        .box_title {
+          font-size: 2.5rem;
+        }
+        .box_text {
+          font-size: 14px;
+          height: 100%;
+          padding: 80px 20px;
+        }
+        order: 1;
+      }
+    }
+    .intro {
+      margin: 10px;
+      padding: 20px 30px;
+      .titleBox {
+        margin-bottom: 20px;
+        border-left: 3px #563d7c solid;
+        .title {
+          font-size: 2rem;
+        }
+        .title, .subtitle {
+          margin-left: 10px;
+        }
+      }
+      .project_text {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+        padding: 0;
+        font-size: 14px;
+      }
+    }
+  }
+}
+</style>
+
 <script>
 
 export default {
@@ -49,7 +185,7 @@ export default {
         {
           title: '周末支教',
           subtitle: '用周末不长的时间，做一生难忘的事情',
-          text: '在清华大学教育扶贫办公室的帮助下，协会与河南滑县抗大初中、河南滑县新区实验小学、河北魏县一中、河北行唐一中、河北宣化四中、河北平乡二中等共十余所中小学建立了长期合作关系，组织清华志愿者在学期中用周末的时间在当地开展支教活动。',
+          text: '周末支教在清华大学教育扶贫办公室的帮助下，协会与河南滑县抗大初中、河南滑县新区实验小学、河北魏县第一中学等共十余所中小学建立了长期合作关系，定期在当地开展支教活动。每期周末支教活动在教学站进行英语培训、励志教育以及成长经历交流等丰富多彩的教学内容。',
           boxes: [
             {
               url: require('../images/projects/zmzj/1.png'),
@@ -77,7 +213,7 @@ export default {
         {
           title: '梦想课堂',
           subtitle: '梦想，是给孩子最好的礼物。',
-          text: '梦想课堂项目源起于2011年电脑传爱部的一次调研，发现有很多农民工子弟在周末得不到父母的陪伴，同时他们的教育结构中也缺乏素质教育、兴趣教育等必须的内容，因而怀着为孩子播种梦想、为公益搭建平台、帮助大学生更多地了解社会的初衷，逐步形成了现在规模较大、运作规范的梦想课堂活动。梦想课堂活动主要致力于运用周末的时间，利用清华大学班级素拓的形式，对没有父母在侧的农民工孩子起到一个陪伴的作用；同时，通过开展音乐、美术、体育、棋类、团队合作、自信力培养、科技创新、英语口语等丰富多彩的课程，以实现素质教育的理念和目标。',
+          text: '梦想课堂项目源于2011年电脑传爱部的一次调研，发现有很多农民工子弟在周末得不到父母的陪伴，同时他们的教育结构中也缺乏素质教育、兴趣教育等必须的内容，因而怀着为孩子播种梦想、为公益搭建平台、帮助大学生更多地了解社会的初衷，逐步形成了现在规模较大、运作规范的梦想课堂活动。梦想课堂活动主要致力于运用周末的时间，利用清华大学班级素拓的形式，对没有父母在侧的农民工孩子起到一个陪伴的作用；同时，通过开展音乐、美术、体育、棋类、团队合作、自信力培养、科技创新、英语口语等丰富多彩的课程，以实现素质教育的理念和目标。',
           boxes: [
             {
               url: require('../images/projects/mxkt/1.jpg'),
@@ -104,7 +240,7 @@ export default {
         },
         {
           title: '任务魔方',
-          subtitle: '公益，需要我们去创新',
+          subtitle: '人人微公益，小小的力量也能造就大大的可能',
           text: '<div>任务魔方是清华大学学生教育扶贫协会的线上活动。项目依托微信平台，借鉴微公益理念，力图打造校园线上微公益平台。通过微公益极大降低公益的门槛，提升同学们的公益参与度，及时反馈公益成果和提升公益感受，促进同学们养成公益的习惯，从而使增强校园的公益氛围。任务魔方目前正在运行公益助跑项目，即参与同学可以用自己跑步的里程兑换成捐献金额或火车票里程的方式，来为孩子们献出一份爱心。该项目现借助线上的公益平台和线下的集体助跑活动收集里程，并与多个学生组织进行合作，为筑梦清华、撒爱励志奖学金等活动进行前期宣传。目前任务魔方已获得清华大学萌芽计划支持。公益助跑活动自2015年11起已圆满完成三期。</div>',
           boxes: [
             {
@@ -118,8 +254,8 @@ export default {
         },
         {
           title: 'S-Lab',
-          subtitle: 'S-Lab一句话简介',
-          text: 'S-lab 介绍',
+          subtitle: '公益，需要我们去创新',
+          text: '公益不只是捐款助老、义务支教，公益也可以新奇有趣。公益发展的新趋势,让我们聚焦平台支持的能量。在信息碎片化、受众多元化的时代,如何集聚资源、发挥最大效益,是公益行业不断探索的课题。协会的发展离不开新的创意，S-lab正式扮演着协会公益孵化器、实验室和先驱者的角色，致力于实践新的公益想法，探索公益的新领域。',
           boxes: [
             {
               url: require('../images/projects/slab/yyxc.jpg'),
@@ -167,14 +303,14 @@ export default {
         },
         {
           title: '撒爱论坛',
-          subtitle: '撒爱论坛一句话简介',
-          text: '撒爱论坛为支教志愿者、社会公益组织、基金会等公益力量搭建了 交流的平台，在交流与讨论中，使各方形成了对大学生支教现状的 共识，并在此基础上对支教中存在的问题进行了总结反思，提出了 切实可行的解决方案，有利于志愿者的不断成长，推进公益组织发 展形式的改进与创新。 此外，“撒爱论坛”希望能通过论坛的交流，一定程度上化解部分志 愿者对公益的质疑，鼓励更多的人参与教育扶贫、关注社会公益事业。',
+          subtitle: '一起探讨公益的新形式，新未来。',
+          text: '协会每年一度举办撒爱论坛，邀请包括学术、社会企业、公益组织、基金会和热爱共益的学生进行一番有关公益创新的探讨，通过这样一个公众论坛进行思想碰撞，共同交流。在撒爱论坛的带领下，通过宣传和活动的参与增加公益的氛围，鼓励更多的人参与关注公益。',
           boxes: [
             {
               url: require('../images/projects/salt/1.jpg'),
               alt: '撒爱论坛',
               title: '项目成果',
-              text: '撒爱论坛为支教志愿者、社会公益组织、基金会等公益力量搭建了交流的平台，在交流与讨论中，各方形成了对大学生支教现状的共识，并在此基础上对支教中存在的问题进行了总结反思，提出了切实可行的解决方案，有利于志愿者的不断成长，推进公益组织发展形式的改进与创新。此外，“撒爱论坛”希望能通过论坛的交流，一定程度上化解部分志愿者对公益的质疑，鼓励更多的人参与教育扶贫、关注社会公益事业。 ',
+              text: '第一届撒爱论坛为支教志愿者、社会公益组织、基金会等公益力量搭建了交流的平台，在交流与讨论中，各方形成了对大学生支教现状的共识，并在此基础上对支教中存在的问题进行了总结反思，提出了切实可行的解决方案，有利于志愿者的不断成长，推进公益组织发展形式的改进与创新。此外，“撒爱论坛”希望能通过论坛的交流，一定程度上化解部分志愿者对公益的质疑，鼓励更多的人参与教育扶贫、关注社会公益事业。 ',
               order: true,
             },
           ],
