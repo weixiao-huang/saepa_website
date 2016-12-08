@@ -1,5 +1,7 @@
 <template lang="pug">
   #projects
+    #subNav
+
     .jumb
       img(src="../images/projects/jumb.jpg", alt="我们用精品的项目充实公益")
     .container
@@ -23,6 +25,146 @@
               .box.box_title {{ box.title }}
               .box.box_text(v-html="box.text")
 </template>
+
+
+<style lang="scss" scoped>
+.order-1 {
+  order:1;
+}
+.order-2 {
+  order: 2;
+}
+
+#subNav {
+  
+}
+
+.jumb img {
+    width: 100%;
+}
+
+.container {
+  margin: 40px;
+}
+
+.project {
+  margin: 50px 0;
+  padding-top: 1px;
+  background: white;
+  box-shadow: 2px 2px 10px #666;
+}
+.intro {
+  margin: 10px;
+  padding: 20px 40px;
+  border: 1px #d6d6d6 solid;
+  .titleBox {
+    border-left: 5px #563d7c solid;
+    .title {
+      font-size: 3rem;
+    }
+    .title, .subtitle {
+      margin-left: 30px;
+    }
+  }
+  .project_text {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+
+    -webkit-column-gap: 50px;
+    -moz-column-gap: 50px;
+    column-gap: 50px;;
+
+    padding: 30px;
+    font-size: 16px;
+  }
+}
+.flex_boxes {
+  display: flex;
+  .p_box {
+    flex: 1;
+    overflow: hidden;
+    img {
+      height: 100%;
+      width: 100%
+    }
+  }
+  .t_box {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .box {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      flex: 1;
+      .bold {
+        font-weight: bold;
+      }
+    }
+    .box_title {
+      align-items: center;
+      background: #04363d;
+      width: 100%;
+      color: white;
+      font-size: 4rem;
+    }
+    .box_text {
+      padding: 60px;
+      font-size: 15px;
+      div {
+        padding-top: 5px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    margin: -40px 15px 0 15px;
+    .flex_boxes {
+      flex-direction:column;
+      .p_box {
+        order: 2;
+      }
+      .t_box {
+        .box_title {
+          font-size: 2.5rem;
+        }
+        .box_text {
+          font-size: 14px;
+          height: 100%;
+          padding: 80px 20px;
+        }
+        order: 1;
+      }
+    }
+    .intro {
+      margin: 10px;
+      padding: 20px 30px;
+      .titleBox {
+        margin-bottom: 20px;
+        border-left: 3px #563d7c solid;
+        .title {
+          font-size: 2rem;
+        }
+        .title, .subtitle {
+          margin-left: 10px;
+        }
+      }
+      .project_text {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+        padding: 0;
+        font-size: 14px;
+      }
+    }
+  }
+}
+</style>
 
 <script>
 
@@ -169,139 +311,3 @@ export default {
   },
 };
 </script>
-
-
-<style lang="scss" scoped>
-.order-1 {
-  order:1;
-}
-.order-2 {
-  order: 2;
-}
-
-.jumb img {
-    width: 100%;
-}
-
-.container {
-  margin: 40px;
-}
-
-.project {
-  margin: 50px 0;
-  padding-top: 1px;
-  background: white;
-  box-shadow: 2px 2px 10px #666;
-}
-.intro {
-  margin: 10px;
-  padding: 20px 40px;
-  border: 1px #d6d6d6 solid;
-  .titleBox {
-    border-left: 5px #563d7c solid;
-    .title {
-      font-size: 3rem;
-    }
-    .title, .subtitle {
-      margin-left: 30px;
-    }
-  }
-  .project_text {
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
-    column-count: 2;
-
-    -webkit-column-gap: 50px;
-    -moz-column-gap: 50px;
-    column-gap: 50px;;
-
-    padding: 30px;
-    font-size: 16px;
-  }
-}
-.flex_boxes {
-  display: flex;
-  .p_box {
-    flex: 1;
-    overflow: hidden;
-    img {
-      height: 100%;
-      width: 100%
-    }
-  }
-  .t_box {
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    .box {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      flex: 1;
-      .bold {
-        font-weight: bold;
-      }
-    }
-    .box_title {
-      align-items: center;
-      background: #04363d;
-      width: 100%;
-      color: white;
-      font-size: 4rem;
-    }
-    .box_text {
-      padding: 60px;
-      font-size: 15px;
-      div {
-        padding-top: 5px;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .container {
-    margin: -40px 15px 0 15px;
-    .flex_boxes {
-      flex-direction:column;
-      .p_box {
-        order: 2;
-      }
-      .t_box {
-        .box_title {
-          font-size: 2.5rem;
-        }
-        .box_text {
-          font-size: 14px;
-          height: 100%;
-          padding: 80px 20px;
-        }
-        order: 1;
-      }
-    }
-    .intro {
-      margin: 10px;
-      padding: 20px 30px;
-      .titleBox {
-        margin-bottom: 20px;
-        border-left: 3px #563d7c solid;
-        .title {
-          font-size: 2rem;
-        }
-        .title, .subtitle {
-          margin-left: 10px;
-        }
-      }
-      .project_text {
-        -webkit-column-count: 1;
-        -moz-column-count: 1;
-        column-count: 1;
-        padding: 0;
-        font-size: 14px;
-      }
-    }
-  }
-}
-</style>
