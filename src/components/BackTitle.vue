@@ -58,4 +58,16 @@ export default {
       }
     }
   }
+
+  @media only screen and (max-width: 768px) {
+    .container {
+      .titleBox {
+        font-size: 25px;
+        height: 100px;
+        .arrow-down, .arrow-up {
+          margin: 10px 0;
+        }
+      }
+    }
+  }
 </style>

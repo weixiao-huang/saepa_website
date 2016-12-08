@@ -3,6 +3,8 @@
     back-title(:src="time.src", :title="time.title")
     timeline
     back-title(:src="saepa11.src", :title="saepa11.title")
+    .framework
+      img(src="../images/contact/framework.jpg")
     .saepa11
       img(src="../images/contact/saepa11.0.jpg")
 </template>
@@ -24,7 +26,7 @@ export default {
         src: require('../images/1.jpg'),
       },
       saepa11: {
-        title: '11.0团队',
+        title: '我们的团队',
         src: require('../images/2.jpg'),
       },
     };
@@ -35,6 +37,9 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="stylus" scoped>
 .saepa11
+  img
+    width 100%
+.framework
   img
     width 100%
 </style>
