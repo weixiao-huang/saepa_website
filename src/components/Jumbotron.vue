@@ -1,17 +1,14 @@
-<template lang="pug">
-  .jumbotron
-    slider(:pages="someList", :sliderinit="sliderinit")
-      //- <!-- slot  -->
+<template>
+  <div>
+    <slider :pages="someList" :sliderinit="sliderinit">
+    </slider>
+  </div>
 </template>
-
 <script>
-import Slider from './slider/slider';
+import slider from './slider/slider';
 
 export default {
-  name: 'jumbotron',
-  components: {
-    Slider,
-  },
+  el: 'jumbotron',
   data() {
     const urls = [
       require('../images/jumbotron/4.jpg'),
@@ -22,7 +19,6 @@ export default {
 
     const u = 'url(';
     const v = ')';
-
     return {
       someList: [
         {
@@ -50,16 +46,21 @@ export default {
           },
         },
       ],
-      //  滑动配置[obj]
       sliderinit: {
         currentPage: 0,
-        thresholdDistance: 500,
-        thresholdTime: 100,
-        autoplay: 4000,
-        loop: true,
-        direction: 'horizontal',
+        // start: {},
+        // end: {},
+        // tracking: false,
+        thresholdTime: 500, // 滑动时间阈值判定距离
+        thresholdDistance: 100, // 滑动距离阈值
+        // direction:'vertical',//垂直滚动
+        loop: true, //  无限循环
+        autoplay: 4000, //  自动播放:时间[ms]
       },
     };
+  },
+  components: {
+    slider,
   },
 };
 </script>
