@@ -46,7 +46,8 @@ export default {
   -------------------------------- */
   $nav_color: rgba(255, 255, 255, 0.7);
   $nav_hover_color: #612379;
-  $background_color: rgb(170, 142, 159);  // #9acd91
+  $background_color: rgb(168, 155, 196);  // #9acd91
+  $nav_icon_active_color: #361b6b;
 
   .cd-stretchy-nav {
     position: fixed;
@@ -212,7 +213,7 @@ export default {
     -ms-transform: translateX(3px) translateY(-50%) scaleY(0);
     -o-transform: translateX(3px) translateY(-50%) scaleY(0);
     transform: translateX(3px) translateY(-50%) scaleY(0);
-    background-color: #0a9581;
+    background-color: $nav_icon_active_color;
   }
   .cd-stretchy-nav ul li:first-of-type a::after {
     /* change custom icon using image sprites */

@@ -164,11 +164,13 @@ export default {
     }
     .achievements {
       display: flex;
+      .picSide, .textSide {
+        height: calc(100vw / 3 * 280 / 400);
+      }
       .picSide {
         width: 33.333333%;
         img {
           width: 100%;
-          height: 100%;
         }
         overflow: hidden;
       }
