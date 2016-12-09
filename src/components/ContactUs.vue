@@ -120,10 +120,12 @@ $size = 150px
 
 
 @media only screen and (max-width 768px)
-  .structure
-    flex-direction column
-    align-items center
-    justify-content center
-    .group
-      padding 20px 0 50px 0
+  .box
+    .boxt
+      .structure
+        flex-direction column
+        align-items center
+        justify-content center
+        .group
+          padding 20px 0 50px 0
 </style>
