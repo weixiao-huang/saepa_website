@@ -1,6 +1,6 @@
 <template lang="pug">
   #app
-    navbar(:class="navbar")
+    navbar
     stretchy-nav(:scroll="scroll", :class="{'show': scroll, 'hidden': !scroll}")
     transition(namd="fade", mode="out-in")
       router-view.view

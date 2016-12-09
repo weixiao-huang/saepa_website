@@ -25,6 +25,7 @@ module.exports = {
     'no-console': 0,
     'no-plusplus': 0,
     'prefer-template': 0,
+    'no-mixed-operators': 0,
     'import/extensions': ['error', 'always', {
       'js': 'never',
       'vue': 'never'

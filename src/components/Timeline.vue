@@ -1,21 +1,10 @@
-<template>
-  <div class="container">
-
-    <div id="timeline">
-
-      <div v-for="(event, index) in events" class="timeline-item" :id="'time-' + index">
-        <div class="timeline-icon">
-          <!--<img src="../images/contact/star.svg" alt="">-->
-        </div>
-        <div class="timeline-content" :class="{'right': index % 2 === 0}">
-          <h2>{{ event.time }}</h2>
-          <p v-html="event.detail"></p>
-        </div>
-      </div>
-
-    </div>
-
-  </div>
+<template lang="pug">
+  #timeline
+    .timeline-item(v-for="(event, index) in events", :id="'time-' + index", :class="{'hidden': event.hidden, 'show': !event.hidden}")
+      .timeline-icon
+      .timeline-content(:class="{'right': index % 2 === 0}")
+        h2 {{ event.time }}
+        p(v-html="event.detail")
 </template>
 
 <script>
@@ -28,6 +17,7 @@ export default {
         {
           time: '2006.12',
           detail: '教育扶贫志愿者协会成立。',
+          hidden: false,
         },
         {
           time: '2008.05',
@@ -36,72 +26,87 @@ export default {
         {
           time: '2009.05',
           detail: '“电脑传爱”项目电脑募捐活动展开，电脑传爱项目诞生。',
+          hidden: false,
         },
         {
           time: '2009.08',
           detail: '“电脑传爱”为内蒙古太仆寺旗兴盛小学捐建了第一间微机室。',
+          hidden: false,
         },
         {
           time: '2012.08',
           detail: '“电脑传爱”项目获得首届阿克苏诺贝尔全国大学生社会公益比赛全国金奖(前五名荣誉)。',
+          hidden: false,
         },
         {
+          hidden: false,
           time: '2012.10',
           detail: '第一次“梦想课堂”活动在北京市顺义区清红蓝小学开展，梦想课堂项目诞生。',
         },
         {
+          hidden: false,
           time: '2013.08',
           detail: '“梦想课堂”项目获得阿克苏诺贝尔中国大学生社会公益奖金奖(前五名荣誉)。',
         },
         {
+          hidden: false,
           time: '2013.09',
           detail: '“梦想课堂”项目获得清华大学秋学生素质拓展计划金奖。<br>“电脑传爱”项目获得清华大学“精品素质拓展项目”。<br>"电脑传爱"项目成为新浪微博"圆梦中国"长期线上公益活动员组织课余时光第一期活动开展，课余时光项目诞生。',
         },
         {
+          hidden: false,
           time: '2013.11',
           detail: '“面对面”农民工子弟专题访谈举行第一期活动，“面对面”项目诞生。',
         },
         {
+          hidden: false,
           time: '2014.04',
           detail: '任务魔方微信平台试运行，任务魔方项目诞生。',
         },
         {
+          hidden: false,
           time: '2014.08',
           detail: '“享读计划”第一期活动在河南商丘宁陵赵村一中举行，享读计划项目诞生。',
         },
         {
+          hidden: false,
           time: '2014.10',
           detail: '成功举办首届“撒爱支教故事大赛”。<br>电脑传爱获清华大学暑期实践学生最佳实践奖、二金星流动杯荣誉。',
         },
         {
+          hidden: false,
           time: '2014.12',
           detail: '成功举办首届撒爱论坛。',
         },
         {
+          hidden: false,
           time: '2015.05',
           detail: '“秀出你的公益STYLE”校园公益主题嘉年华。',
         },
         {
+          hidden: false,
           time: '2016.10',
           detail: '“多跑一步，多爱一分”公益助跑活动举办。',
         },
         {
+          hidden: false,
           time: '2016.12',
           detail: 'SAEPA十周年庆典。',
         },
       ],
     };
   },
-  create() {
+  created() {
     document.addEventListener('scroll', () => {
       const scrollTop = (document.documentElement.scrollTop ||
                       window.pageYOffset || document.body.scrollTop);
       for (let i = 0; i < this.events.length; i++) {
-        const time = document.getElementById('time-' + (i + 1));
-        if (time.offsetTop - 100 > scrollTop) {
-          time.className += ' hidden';
-        }
+        const offsetTop = document.getElementById('time-' + i).offsetTop -
+                          window.screen.height / 2;
+        console.log(offsetTop);
+        this.events[i].hidden = offsetTop > scrollTop;
       }
+      console.log('\n');
     });
   },
 };
@@ -240,10 +245,6 @@ h1, h2, h3, h4 {
   left: inherit;
   border-left: 0;
   border-right: 7px solid #5f2776;
-}
-
-.hidden {
-  opacity: 0;
 }
 
 @media screen and (max-width: 768px) {
