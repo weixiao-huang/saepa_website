@@ -65,6 +65,7 @@ $navLineActiveColor = #612379
     height $navHeight
 
 nav
+  background-color: #f8f9fb
   text-align: center
   ul
     list-style none

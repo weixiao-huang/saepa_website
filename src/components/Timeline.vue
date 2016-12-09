@@ -113,7 +113,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
 #timeline .timeline-item:after,#timeline .timeline-item:before {
   content: '';
   display: block;
@@ -126,24 +125,6 @@ export default {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
 }
-body {
-  background: #f9f9f9;
-  background-size: cover;
-  margin: 0;
-  padding: 0;
-  font-family: helvetica, arial, tahoma, verdana;
-  line-height: 20px;
-  font-size: 14px;
-  color: #726f77;
-  -webkit-font-smoothing: antialiased;
-}
-img {
-  max-width: 100%
-}
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-}
 h1, h2, h3, h4 {
   font-family: "Dosis", arial, tahoma, verdana;
   font-weight: 600;
@@ -151,7 +132,8 @@ h1, h2, h3, h4 {
 
 #timeline {
   width: 90%;
-  margin: 30px auto;
+  padding: 30px 0;
+  margin: 0 auto;
   position: relative;
   -webkit-transition: all 0.4s ease;
   -moz-transition: all 0.4s ease;
@@ -249,8 +231,8 @@ h1, h2, h3, h4 {
 
 @media screen and (max-width: 768px) {
   #timeline {
-    margin: 30px;
-    padding: 0;
+    padding: 10px 0;
+    margin: 0 auto;
   }
   #timeline:before {
     left: 0;

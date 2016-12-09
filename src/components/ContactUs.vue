@@ -1,7 +1,10 @@
 <template lang="pug">
-  .contact
-    back-title(:src="time.src", :title="time.title")
-    timeline
+  #contact
+    .box
+      .boxt
+        .title 我们走过的道路
+    .timeline
+      timeline
     .box
       .boxt
         .title 我们的团队
@@ -34,13 +37,11 @@
 </template>
 
 <script>
-import BackTitle from './BackTitle';
 import Timeline from './Timeline';
 
 export default {
   name: 'mooc',
   components: {
-    BackTitle,
     Timeline,
   },
   data() {
@@ -62,18 +63,18 @@ export default {
 <style lang="stylus" scoped>
 
 $size = 150px
+#contact
+  background url("../images/str.jpg") no-repeat center center
+  background-attachment fixed !important
+  -webkit-background-size cover !important
+  -moz-background-size cover !important
+  -o-background-size cover !important
+  background-size cover !important
 
-.saepa11
-  img
-    width 100%
-.framework
-  img
-    width 100%
+.timeline
+  background white
 
 .box
-  background url("../images/str.jpg") no-repeat center center
-  -webkit-background-size cover
-  background-size cover
   .boxt
     .title
       mix-blend-mode screen
