@@ -474,6 +474,9 @@ $animate_time: 0.5s;
           text-shadow: 2px 2px 2px #000;
           font-weight: bold;
         }
+        &:hover {
+          text-shadow: 2px 2px 2px #000;
+        }
       }
     }
   }
