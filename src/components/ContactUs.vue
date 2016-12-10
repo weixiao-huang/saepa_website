@@ -77,7 +77,7 @@ $size = 150px
   background #30043f
   text-align center
   color whitesmoke
-  padding 60px
+  padding 80px 60px
   text-shadow 1px 1px 1px #b838f9
 .structure
   mix-blend-mode screen
@@ -117,6 +117,9 @@ $size = 150px
 @media only screen and (max-width 768px)
   #contact
     background-attachment scroll
+  .title
+    padding 60px
+    font-size 35px
   .structure
     flex-direction column
     align-items center

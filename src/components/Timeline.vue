@@ -156,7 +156,7 @@ h1, h2, h3, h4 {
   width: 100%
 }
 #timeline .timeline-item {
-  margin-bottom: 0px;
+  margin-bottom: 0;
   position: relative;
 }
 #timeline .timeline-item .timeline-icon {
