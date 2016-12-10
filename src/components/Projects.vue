@@ -456,7 +456,7 @@ $animate_time: 0.5s;
   }
 }
 
-
+$hover_time: 0.2s;
 #subNav {
   top: 0;
   position: fixed;
@@ -469,6 +469,11 @@ $animate_time: 0.5s;
       display: inline-block;
       padding: 0 20px;
       a {
+        -webkit-transition: all $hover_time;
+        -moz-transition: all $hover_time;
+        -ms-transition: all $hover_time;
+        -o-transition: all $hover_time;
+        transition: all $hover_time;
         color: white;
         &.active {
           text-shadow: 2px 2px 2px #000;
