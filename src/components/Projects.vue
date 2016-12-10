@@ -3,7 +3,7 @@
     #subNav(:scroll="scroll", :class="{'pShow': scroll, 'hidden': !scroll}")
       ul
         li.item(v-for="(item, index) in items")
-          a(:href="'#sr' + index") {{ item }}
+          a(:href="'#sr' + index", :class="{'active': index === active}") {{ item }}
     .jumb
       img(src="../images/projects/jumb.jpg", alt="我们用精品的项目充实公益")
     .container
@@ -171,6 +171,8 @@ export default {
   data() {
     return {
       scroll: false,
+      active: -1,
+      currentOffset: 0,
       items: [
         '周末支教',
         '享读计划',
@@ -320,16 +322,42 @@ export default {
   },
   created() {
     document.addEventListener('scroll', () => {
-      this.scroll = ((document.documentElement.scrollTop ||
-                      window.pageYOffset || document.body.scrollTop) > 400);
+      const scrollTop = (document.documentElement.scrollTop ||
+                         window.pageYOffset || document.body.scrollTop);
+      this.scroll = scrollTop > 400;
+      const len = this.projects.length;
+      for (let i = 0; i < len - 1; ++i) {
+        const offsetTop = document.getElementById('sr' + i).offsetTop;
+        const offsetTop2 = document.getElementById('sr' + (i + 1)).offsetTop;
+        if (offsetTop <= scrollTop && scrollTop < offsetTop2) {
+          this.active = i;
+          this.currentOffset = document.getElementById('sr' + this.active).offsetTop;
+        }
+      }
+      if (scrollTop >= document.getElementById('sr' + (len - 1)).offsetTop) {
+        this.active = len - 1;
+        this.currentOffset = document.getElementById('sr' + this.active).offsetTop;
+      }
     });
   },
+//  methods: {
+//    scrollTo() {
+//      const scrollTop = (document.documentElement.scrollTop ||
+//                         window.pageYOffset || document.body.scrollTop);
+//      setInterval(() => {
+//        if (scrollTop < this.currentOffsetTop) {
+//          document.documentElement.scrollTop += 10;
+//        } else {
+//          document.documentElement.scrollTop -= 10;
+//        }
+//      }, 10);
+//    },
+//  },
 };
 </script>
 
 
 <style lang="scss" scoped>
-
 
 .order-1 {
   order:1;
@@ -442,6 +470,10 @@ $animate_time: 0.5s;
       padding: 0 20px;
       a {
         color: white;
+        &.active {
+          text-shadow: 2px 2px 2px #000;
+          font-weight: bold;
+        }
       }
     }
   }
