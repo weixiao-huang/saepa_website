@@ -291,7 +291,7 @@ export default {
         },
         {
           title: '电脑传爱',
-          subtitle: '用周末不长的时间，做一生难忘的事情',
+          subtitle: '互联网+科技+公益',
           text: '<div>在互联网与科技高速发展的今天，我们致力于“互联网+科技+公益”的公益模式的探索与推行，捐献微机室，机器人普及教育，MOOC教学……我们不断探索新的理念与新的模式，我们让高新技术不再遥远。</div><div>SAEPA电脑传爱部成立于2010年，历年来曾与戴尔公司、国维芯达科技有限公司、美克美家家居连锁有限公司、中视协(北京)演艺文化有限公司、新浪公司、金雅拓（北京）智能卡科技有限公司等知名企业合作，在内蒙古、贵州、云南和北京周边等地区为贫困子弟学校捐赠多达13个微机室，多次获得校级与国家级实践奖项。</div><div>同时，鉴于相当部分合作的贫困学校对教学资源的需求远胜于对硬件资源的需求，部分学校的硬件设施也足以支持网络课程甚至直播支教，项目将工作重心转移到MOOC教学上。2016年下半年，萝卜太辣与SAEPA再次合作，以MOOC结合线下实践课为形式，在合适的中学推行机器人教育，迈出转型的第一步。</div>',
           boxes: [
             {
@@ -321,14 +321,15 @@ export default {
     };
   },
   created() {
+    const offset = 100;
     document.addEventListener('scroll', () => {
       const scrollTop = (document.documentElement.scrollTop ||
                          window.pageYOffset || document.body.scrollTop);
       this.scroll = scrollTop > 400;
       const len = this.projects.length;
       for (let i = 0; i < len - 1; ++i) {
-        const offsetTop = document.getElementById('sr' + i).offsetTop;
-        const offsetTop2 = document.getElementById('sr' + (i + 1)).offsetTop;
+        const offsetTop = document.getElementById('sr' + i).offsetTop - offset;
+        const offsetTop2 = document.getElementById('sr' + (i + 1)).offsetTop - offset;
         if (offsetTop <= scrollTop && scrollTop < offsetTop2) {
           this.active = i;
           this.currentOffset = document.getElementById('sr' + this.active).offsetTop;
