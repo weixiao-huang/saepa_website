@@ -219,7 +219,7 @@ export default {
           boxes: [
             {
               url: require('../images/projects/mxkt/1.jpg'),
-              alt: '周末支教',
+              alt: '梦想课堂',
               title: '项目成果',
               text: '<div>从2011年起，我们已在五年中成功举办约<span class="bold">80次活动</span>，受益学生<span class="bold">超三千人</span>，并且和明圆小学、京顺学校等农民工子弟小学建立了稳定的合作关系，学校和学生对清华学生的到来均表现出很大的热情。</div><div>梦想课堂项目迄今为止已多次获得<span class="bold">清华大学校级素拓项目金奖</span>，并获得<span class="bold">2013阿克苏诺贝尔中国大学生社会公益奖金奖</span>。在清华大学校方与学生之中影响力颇为深远。 </div>',
               order: true,
@@ -321,15 +321,15 @@ export default {
     };
   },
   created() {
-    const offset = 100;
+    const pert = 100;
     document.addEventListener('scroll', () => {
       const scrollTop = (document.documentElement.scrollTop ||
                          window.pageYOffset || document.body.scrollTop);
       this.scroll = scrollTop > 400;
       const len = this.projects.length;
       for (let i = 0; i < len - 1; ++i) {
-        const offsetTop = document.getElementById('sr' + i).offsetTop - offset;
-        const offsetTop2 = document.getElementById('sr' + (i + 1)).offsetTop - offset;
+        const offsetTop = document.getElementById('sr' + i).offsetTop - pert;
+        const offsetTop2 = document.getElementById('sr' + (i + 1)).offsetTop - pert;
         if (offsetTop <= scrollTop && scrollTop < offsetTop2) {
           this.active = i;
           this.currentOffset = document.getElementById('sr' + this.active).offsetTop;
