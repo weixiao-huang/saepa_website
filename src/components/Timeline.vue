@@ -103,10 +103,8 @@ export default {
       for (let i = 0; i < this.events.length; i++) {
         const offsetTop = document.getElementById('time-' + i).offsetTop -
                           window.screen.height / 2;
-        console.log(offsetTop);
         this.events[i].hidden = offsetTop > scrollTop;
       }
-      console.log('\n');
     });
   },
 };
