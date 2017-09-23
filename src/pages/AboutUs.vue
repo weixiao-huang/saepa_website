@@ -1,39 +1,40 @@
 <template lang="pug">
-  #contact
-    .title 我们走过的道路
-    .timeline
-      timeline
-    .title 我们的团队
-    .structure
-     .group
-       .circle.
-         项目中心
-       .line |
-       ul
-         li 周末支教
-         li 梦想课堂
-         li 电脑传爱
-         li 创新工作室
-     .group
-       .circle.
-         对外交<br>流中心
-       .line |
-       ul
-         li 设计工作室
-         li 外宣部
-     .group
-       .circle.
-         人力资<br>源中心
-       .line |
-       ul
-         li 人力资源部
-         li 撒爱工作室
-
-
+#contact
+  .title 我们走过的道路
+  .timeline
+    timeline
+  .title 我们的团队
+  .structure
+    .group
+      .circle.
+        项目中心
+      .line |
+      ul
+        li 周末支教
+        li 梦想课堂
+        li 电脑传爱
+        li 创新工作室
+    .group
+      .circle.
+        对外交<br>流中心
+      .line |
+      ul
+        li 设计工作室
+        li 外宣部
+    .group
+      .circle.
+        人力资<br>源中心
+      .line |
+      ul
+        li 人力资源部
+        li 撒爱工作室
 </template>
 
+
 <script>
-import Timeline from './Timeline';
+import Timeline from '@/components/Timeline';
+import pic1 from '@/images/1.jpg';
+import pic2 from '@/images/2.jpg';
 
 export default {
   name: 'mooc',
@@ -44,16 +45,17 @@ export default {
     return {
       time: {
         title: '我们走过的道路',
-        src: require('../images/1.jpg'),
+        src: pic1,
       },
       saepa11: {
         title: '我们的团队',
-        src: require('../images/2.jpg'),
+        src: pic2,
       },
     };
   },
 };
 </script>
+
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="stylus" scoped>

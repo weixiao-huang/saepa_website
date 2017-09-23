@@ -13,7 +13,7 @@
           div 邮箱: saepa_thu@163.com
           div 微博: 清华SAEPA
           div Copyright © 2016 SAEPA
-          div <a href="http://www.miitbeian.gov.cn">京ICP备16062772号
+          div <a href="http://www.miitbeian.gov.cn">京ICP备16062772号</a>
 </template>
 
 <script>

@@ -1,18 +1,16 @@
 <template lang="pug">
-  #mooc
-    .jumb
-      img(src="../images/mooc.jpg")
+#mooc
+  .jumb
+    img(src="../images/mooc.jpg")
 </template>
 
 <script>
 export default {
   name: 'mooc',
   components: {
-
   },
   data() {
     return {
-      msg: 'Welcome to Your Vue.js App',
     };
   },
 };
@@ -20,8 +18,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="stylus" scoped>
-  .jumb
-    margin 0
-    img
-      width 100%
+.jumb
+  margin 0
+  // height calc(100vh - 82px)
+  // max-height calc(100vw * 9 / 16)
+  // overflow hidden
+  img
+    width 100%
 </style>

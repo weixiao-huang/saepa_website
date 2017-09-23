@@ -1,23 +1,22 @@
 <template lang="pug">
-  .container
-    nav
-      .left_box
-      ul.nav_container
-        input#toggle(type="checkbox", name="toggle")
-        li.nav_toggle
-          label.nav_icon(for="toggle")
-        li.logo
-          img(src="../images/logo.jpg")
-        template(v-for="(item, index) in items")
-          li.point &middot;
-          template(v-if = "item.text == '学方论坛'")
-            li.normal
-              a(:href="item.path", target="_blank") {{ item.text }}
-          template(v-else)
-            router-link.normal(:to="item.path", tag="li") {{ item.text }}
-        li.point &middot;
-      .right_img
-        img(src="../images/logo.jpg")
+nav
+  .left_box
+  ul.nav_container
+    input#toggle(type="checkbox", name="toggle")
+    li.nav_toggle
+      label.nav_icon(for="toggle")
+    li.logo
+      img(src="../images/logo.jpg")
+    template(v-for="(item, index) in items")
+      li.point &middot;
+      template(v-if = "item.text == '学方论坛'")
+        li.normal
+          a(:href="item.path", target="_blank") {{ item.text }}
+      template(v-else)
+        router-link.normal(:to="item.path", tag="li") {{ item.text }}
+    li.point &middot;
+  .right_img
+    img(src="../images/logo.jpg")
 </template>
 
 <script>

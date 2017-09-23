@@ -1,10 +1,10 @@
 <template lang="pug">
-  #timeline
-    .timeline-item(v-for="(event, index) in events", :id="'time-' + index", :class="{'hidden': event.hidden, 'show': !event.hidden}")
-      .timeline-icon
-      .timeline-content(:class="{'right': index % 2 === 0}")
-        h2 {{ event.time }}
-        p(v-html="event.detail")
+#timeline
+  .timeline-item(v-for="(event, index) in events", :id="'time-' + index", :class="{'hidden': event.hidden, 'show': !event.hidden}")
+    .timeline-icon
+    .timeline-content(:class="{'right': index % 2 === 0}")
+      h2 {{ event.time }}
+      p(v-html="event.detail")
 </template>
 
 <script>
@@ -100,9 +100,9 @@ export default {
     document.addEventListener('scroll', () => {
       const scrollTop = (document.documentElement.scrollTop ||
                       window.pageYOffset || document.body.scrollTop);
-      for (let i = 0; i < this.events.length; i++) {
-        const offsetTop = document.getElementById('time-' + i).offsetTop -
-                          window.screen.height / 2;
+      for (let i = 0; i < this.events.length; i += 1) {
+        const offsetTop = document.getElementById(`time-${i}`).offsetTop -
+                          (window.screen.height / 2);
         this.events[i].hidden = offsetTop > scrollTop;
       }
     });

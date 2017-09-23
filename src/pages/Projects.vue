@@ -1,31 +1,31 @@
 <template lang="pug">
-  #projects
-    #subNav(:scroll="scroll", :class="{'pShow': scroll, 'hidden': !scroll}")
-      ul
-        li.item(v-for="(item, index) in items")
-          a(:href="'#sr' + index", :class="{'active': index === active}") {{ item }}
-    .jumb
-      img(src="../images/projects/jumb.jpg", alt="我们用精品的项目充实公益")
-    .container
-      .project(v-for="(project, index) in projects", :id="'sr' + index")
-        .intro
-          .titleBox
-            .title {{ project.title }}
-            .subtitle {{ project.subtitle }}
-          .project_text(v-html="project.text")
-        .flex_boxes(v-for="box in project.boxes")
-          template(v-if="box.order")
-            .p_box.order-1
-              img(:src="box.url", :alt="box.alt")
-            .t_box.order-2
-              .box.box_title {{ box.title }}
-              .box.box_text(v-html="box.text")
-          template(v-else)
-            .p_box.order-2
-              img(:src="box.url", :alt="box.alt")
-            .t_box.order-1
-              .box.box_title {{ box.title }}
-              .box.box_text(v-html="box.text")
+#projects
+  #subNav(:scroll="scroll", :class="{'pShow': scroll, 'hidden': !scroll}")
+    ul
+      li.item(v-for="(item, index) in items")
+        a(:href="'#sr' + index", :class="{'active': index === active}") {{ item }}
+  .jumb
+    img(src="../images/projects/jumb.jpg", alt="我们用精品的项目充实公益")
+  .container
+    .project(v-for="(project, index) in projects", :id="'sr' + index")
+      .intro
+        .titleBox
+          .title {{ project.title }}
+          .subtitle {{ project.subtitle }}
+        .project_text(v-html="project.text")
+      .flex_boxes(v-for="box in project.boxes")
+        template(v-if="box.order")
+          .p_box.order-1
+            img(:src="box.url", :alt="box.alt")
+          .t_box.order-2
+            .box.box_title {{ box.title }}
+            .box.box_text(v-html="box.text")
+        template(v-else)
+          .p_box.order-2
+            img(:src="box.url", :alt="box.alt")
+          .t_box.order-1
+            .box.box_title {{ box.title }}
+            .box.box_text(v-html="box.text")
 </template>
 
 
@@ -164,10 +164,9 @@
 }
 </style>
 
-<script>
 
+<script>
 export default {
-  name: 'app',
   data() {
     return {
       scroll: false,
@@ -327,17 +326,17 @@ export default {
                          window.pageYOffset || document.body.scrollTop);
       this.scroll = scrollTop > 400;
       const len = this.projects.length;
-      for (let i = 0; i < len - 1; ++i) {
-        const offsetTop = document.getElementById('sr' + i).offsetTop - pert;
-        const offsetTop2 = document.getElementById('sr' + (i + 1)).offsetTop - pert;
+      for (let i = 0; i < len - 1; i += 1) {
+        const offsetTop = document.getElementById(`sr${i}`).offsetTop - pert;
+        const offsetTop2 = document.getElementById(`sr${i + 1}`).offsetTop - pert;
         if (offsetTop <= scrollTop && scrollTop < offsetTop2) {
           this.active = i;
-          this.currentOffset = document.getElementById('sr' + this.active).offsetTop;
+          this.currentOffset = document.getElementById(`sr${this.active}`).offsetTop;
         }
       }
-      if (scrollTop >= document.getElementById('sr' + (len - 1)).offsetTop) {
+      if (scrollTop >= document.getElementById(`sr${len - 1}`).offsetTop) {
         this.active = len - 1;
-        this.currentOffset = document.getElementById('sr' + this.active).offsetTop;
+        this.currentOffset = document.getElementById(`sr${this.active}`).offsetTop;
       }
     });
   },
