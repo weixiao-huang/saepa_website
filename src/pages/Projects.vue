@@ -5,7 +5,7 @@
       li.item(v-for="(item, index) in items")
         a(:href="'#sr' + index", :class="{'active': index === active}") {{ item }}
   .jumb
-    img(src="../images/projects/jumb.jpg", alt="我们用精品的项目充实公益")
+    img(src="../images/projects/jumb.png", alt="我们用精品的项目充实公益")
   .container
     .project(v-for="(project, index) in projects", :id="'sr' + index")
       .intro
