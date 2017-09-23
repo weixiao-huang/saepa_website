@@ -322,21 +322,23 @@ export default {
   created() {
     const pert = 100;
     document.addEventListener('scroll', () => {
-      const scrollTop = (document.documentElement.scrollTop ||
-                         window.pageYOffset || document.body.scrollTop);
-      this.scroll = scrollTop > 400;
-      const len = this.projects.length;
-      for (let i = 0; i < len - 1; i += 1) {
-        const offsetTop = document.getElementById(`sr${i}`).offsetTop - pert;
-        const offsetTop2 = document.getElementById(`sr${i + 1}`).offsetTop - pert;
-        if (offsetTop <= scrollTop && scrollTop < offsetTop2) {
-          this.active = i;
+      if (this.$route.path === '/projects') {
+        const scrollTop = (document.documentElement.scrollTop ||
+                          window.pageYOffset || document.body.scrollTop);
+        this.scroll = scrollTop > 400;
+        const len = this.projects.length;
+        for (let i = 0; i < len - 1; i += 1) {
+          const offsetTop = document.getElementById(`sr${i}`).offsetTop - pert;
+          const offsetTop2 = document.getElementById(`sr${i + 1}`).offsetTop - pert;
+          if (offsetTop <= scrollTop && scrollTop < offsetTop2) {
+            this.active = i;
+            this.currentOffset = document.getElementById(`sr${this.active}`).offsetTop;
+          }
+        }
+        if (scrollTop >= document.getElementById(`sr${len - 1}`).offsetTop) {
+          this.active = len - 1;
           this.currentOffset = document.getElementById(`sr${this.active}`).offsetTop;
         }
-      }
-      if (scrollTop >= document.getElementById(`sr${len - 1}`).offsetTop) {
-        this.active = len - 1;
-        this.currentOffset = document.getElementById(`sr${this.active}`).offsetTop;
       }
     });
   },

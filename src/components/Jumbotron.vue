@@ -1,6 +1,6 @@
 <template lang="pug">
 swiper.jumbotron(:options="swiperOption")
-  swiper-slide.swiper-slide(v-for="item of urls")
+  swiper-slide.swiper-slide(v-for="(item, id) of urls", :key="id")
     img(:src="item", style="width: 100%;")
   .swiper-pagination(slot="pagination")
 </template>
