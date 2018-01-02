@@ -6,16 +6,10 @@
     .first
       .aboutUs
         .aboutTitle.
-          关于我们<br>—
-        .aboutContent.
-          清华大学学生教育扶贫公益协会（SAEPA）成立于2006年12月，隶属于
-          清华大学教育扶贫办公室。协会着力于构建一个教育扶贫平台，促进清华
-          学子和中国贫困地区的孩子之间的交流。
-          协会专注于周末支教、电脑传爱、梦想课堂等多个规范化项目，成立10年
-          来已然取得累累硕果。任务魔方、课余时光、享读计划等新增项目更为协
-          会注入活力。
+          {{ aboutus.title }}<br>—
+        .aboutContent {{ aboutus.text }}
       .icon_container
-        .icon_box(v-for="item in items")
+        .icon_box(v-for="item in aboutus.list")
           img(:src="item.url", :alt="item.alt")
           .icon_text
             p {{ item.text1 }}
@@ -80,9 +74,7 @@ import tex1 from '@/images/home/text1.jpg';
 import tex2 from '@/images/home/text2.jpg';
 import tex3 from '@/images/home/text3.jpg';
 import tex4 from '@/images/home/text4.jpg';
-import pic5 from '@/images/5.png';
-import pic6 from '@/images/6.png';
-import pic7 from '@/images/7.png';
+import { home } from '../data.json';
 
 export default {
   name: 'home',
@@ -96,11 +88,7 @@ export default {
         pagination: '.swiper-pagination',
         paginationClickable: true,
       },
-      items: [
-        { url: pic5, alt: '公益创造快乐', text1: '公益是一门', text2: '大学必修课' },
-        { url: pic6, alt: '知识改变命运', text1: '　知识改变命运，', text2: '　实践检验真知！' },
-        { url: pic7, alt: '一个团队，一起努力', text1: '　一个团队，', text2: '　一起努力！' },
-      ],
+      aboutus: home.aboutus,
       textSides: [
         addBG(tex1),
         addBG(tex2),

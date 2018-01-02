@@ -7,10 +7,7 @@ swiper.jumbotron(:options="swiperOption")
 
 
 <script>
-import jumb4 from '@/images/jumbotron/4.jpg';
-import jumb5 from '@/images/jumbotron/5.jpg';
-import jumb6 from '@/images/jumbotron/6.jpg';
-import jumb7 from '@/images/jumbotron/7.jpg';
+import { home } from '../data.json';
 
 export default {
   data() {
@@ -22,7 +19,7 @@ export default {
         paginationClickable: true,
         pagination: '.swiper-pagination',
       },
-      urls: [jumb4, jumb5, jumb6, jumb7],
+      urls: home.jumbotrons,
     };
   },
 };
