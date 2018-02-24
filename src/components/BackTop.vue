@@ -22,7 +22,7 @@
 
 
 <template lang="pug">
-.back-top(@click.prevent="backTop")
+.back-top(v-scroll-to="'#app'")
   div
    slot
 </template>
@@ -34,18 +34,5 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 @Component
 export default class BackTop extends Vue {
   @Prop({ default: 0.1 }) private speed!: number;
-
-  public backTop() {
-    let top = document.body.scrollTop;
-    const timer = setInterval(() => {
-      top -= Math.abs(top * this.speed);
-      if (top <= 1) {
-        top = 0;
-        clearInterval(timer);
-      }
-      document.body.scrollTop = top;
-    }, 20);
-    return false;
-  }
 }
 </script>

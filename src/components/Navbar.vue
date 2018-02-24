@@ -9,11 +9,7 @@ nav
       img(src="../images/logo.jpg")
     template(v-for="(item, index) in items")
       li.point &middot;
-      template(v-if = "item.text == '学方论坛'")
-        li.normal
-          a(:href="item.path", target="_blank") {{ item.text }}
-      template(v-else)
-        router-link.normal(:to="item.path", tag="li") {{ item.text }}
+      router-link.normal(:to="item.path", tag="li") {{ item.text }}
     li.point &middot;
   .right_img
     img(src="../images/logo.jpg")
@@ -28,7 +24,6 @@ export default class Navbar extends Vue {
     { text: '主页', path: '/home' },
     { text: '项目介绍', path: '/projects' },
     { text: 'MOOC', path: '/mooc' },
-    { text: '学方论坛', path: 'http://ixuefang.cn/' },
     { text: '关于我们', path: '/contact' },
   ];
 }

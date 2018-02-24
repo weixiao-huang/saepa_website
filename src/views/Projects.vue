@@ -184,7 +184,7 @@ $hover_time: 0.2s;
   #subNav(:scroll="scroll", :class="{'pShow': scroll, 'hidden': !scroll}")
     ul
       li.item(v-for="(item, index) in projects")
-        a(:href="'#sr' + index", :class="{'active': index === active}") {{ item.title }}
+        a(:href="`#sr${index}`", v-scroll-to="`#sr${index}`", :class="{'active': index === active}") {{ item.title }}
   .jumb
     img(:src="jumb", alt="我们用精品的项目充实公益")
   .container
