@@ -41,14 +41,6 @@ import Timeline from '@/components/Timeline.vue';
   },
 })
 export default class AboutUs extends Vue {
-  private time = {
-    title: '我们走过的道路',
-    src: require('@/images/1.jpg'),
-  };
-  private saepa11 = {
-    title: '我们的团队',
-    src: require('@/images/2.jpg'),
-  };
 }
 </script>
 

@@ -6,21 +6,18 @@ swiper.jumbotron(:options="swiperOption")
 </template>
 
 
-<script>
-import { home } from '../data.json';
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
 
-export default {
-  data() {
-    return {
-      swiperOption: {
-        autoplay: 3000,
-        autoHeight: true,
-        loop: true,
-        paginationClickable: true,
-        pagination: '.swiper-pagination',
-      },
-      urls: home.jumbotrons,
-    };
-  },
-};
+@Component
+export default class Jumbotron extends Vue {
+  private swiperOption = {
+    autoplay: 3000,
+    autoHeight: true,
+    loop: true,
+    paginationClickable: true,
+    pagination: '.swiper-pagination',
+  };
+  private urls = require('@/data.json').home.jumbotrons;
+}
 </script>

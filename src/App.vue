@@ -8,30 +8,29 @@
 </template>
 
 
-<script>
-import Navbar from '@/components/Navbar';
-import MyFooter from '@/components/Footer';
-import BackTop from '@/components/BackTop';
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+import Navbar from '@/components/Navbar.vue';
+import MyFooter from '@/components/Footer.vue';
+import BackTop from '@/components/BackTop.vue';
 
-export default {
-  name: 'app',
+@Component({
   components: {
     Navbar,
     MyFooter,
     BackTop,
   },
-  data() {
-    return {
-      scroll: false,
-    };
-  },
-  created() {
+})
+export default class App extends Vue {
+  private scroll = false;
+
+  public created() {
     document.addEventListener('scroll', () => {
       this.scroll = ((document.documentElement.scrollTop ||
                       window.pageYOffset || document.body.scrollTop) > 100);
     });
-  },
-};
+  }
+}
 </script>
 
 

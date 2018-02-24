@@ -19,22 +19,19 @@ nav
     img(src="../images/logo.jpg")
 </template>
 
-<script>
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
 
-export default {
-  name: 'navbar',
-  data() {
-    return {
-      items: [
-        { text: '主页', path: '/home' },
-        { text: '项目介绍', path: '/projects' },
-        { text: 'MOOC', path: '/mooc' },
-        { text: '学方论坛', path: 'http://ixuefang.cn/' },
-        { text: '关于我们', path: '/contact' },
-      ],
-    };
-  },
-};
+@Component
+export default class Navbar extends Vue {
+  private items = [
+    { text: '主页', path: '/home' },
+    { text: '项目介绍', path: '/projects' },
+    { text: 'MOOC', path: '/mooc' },
+    { text: '学方论坛', path: 'http://ixuefang.cn/' },
+    { text: '关于我们', path: '/contact' },
+  ];
+}
 </script>
 
 <style lang="stylus" scoped>

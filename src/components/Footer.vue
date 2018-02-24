@@ -59,14 +59,11 @@
 </template>
 
 
-<script>
-import { footer } from '../data.json';
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
 
-export default {
-  data() {
-    return {
-      socials: footer.socials,
-    };
-  },
-};
+@Component
+export default class Footer extends Vue {
+  private socials = require('@/data.json').footer.socials;
+}
 </script>

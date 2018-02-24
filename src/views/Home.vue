@@ -68,36 +68,27 @@
             img(src="../images/zmzj2.png", alt="周末支教")
 </template>
 
-<script>
-import Jumbotron from '@/components/Jumbotron';
-import tex1 from '@/images/home/text1.jpg';
-import tex2 from '@/images/home/text2.jpg';
-import tex3 from '@/images/home/text3.jpg';
-import tex4 from '@/images/home/text4.jpg';
-import { home } from '../data.json';
+<script lang="ts">
+import { Component, Vue } from 'vue-property-decorator';
+import Jumbotron from '@/components/Jumbotron.vue';
 
-export default {
-  name: 'home',
+const addBG = (img: any) => `url(${img}) no-repeat center center`;
+
+@Component({
   components: {
     Jumbotron,
   },
-  data() {
-    const addBG = img => `url(${img}) no-repeat center center`;
-    return {
-      swiperOption: {
-        pagination: '.swiper-pagination',
-        paginationClickable: true,
-      },
-      aboutus: home.aboutus,
-      textSides: [
-        addBG(tex1),
-        addBG(tex2),
-        addBG(tex3),
-        addBG(tex4),
-      ],
-    };
-  },
-};
+})
+export default class Home extends Vue {
+  private swiperOption = {
+    pagination: '.swiper-pagination',
+    paginationClickable: true,
+  };
+  private aboutus = require('@/data.json').home.aboutus;
+  private textSides = [...Array(4).keys()].map((i) => (
+    addBG(require(`@/images/home/text${i + 1}.jpg`))
+  ));
+}
 </script>
 
 
