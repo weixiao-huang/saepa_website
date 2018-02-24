@@ -31,9 +31,13 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
 
+interface BackTopProps {
+  speed: number;
+}
+
 @Component
 export default class BackTop extends Vue {
-  @Prop({ default: 0.1 }) public speed: number;
+  @Prop({ default: 0.1 }) private speed!: number;
 
   public backTop() {
     let top = document.body.scrollTop;
