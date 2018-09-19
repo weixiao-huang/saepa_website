@@ -85,7 +85,7 @@ export default class Home extends Vue {
     paginationClickable: true,
   };
   private aboutus = require('@/data.json').home.aboutus;
-  private textSides = [...Array(4).keys()].map((i) => (
+  private textSides = [...Array(4).keys()].map(i => (
     addBG(require(`@/images/home/text${i + 1}.jpg`))
   ));
 }

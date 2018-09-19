@@ -1,6 +1,10 @@
 <template lang="pug">
 #timeline
-  .timeline-item(v-for="(event, index) in events", :id="'time-' + index", :class="{'hidden': event.hidden, 'show': !event.hidden}")
+  .timeline-item(
+    v-for="(event, index) in events",
+    :id="'time-' + index",
+    :class="{'hidden': event.hidden, 'show': !event.hidden}",
+  )
     .timeline-icon
     .timeline-content(:class="{'right': index % 2 === 0}")
       h2 {{ event.time }}
@@ -163,7 +167,8 @@ h1, h2, h3, h4 {
     width: 90%;
     float: right;
   }
-  #timeline .timeline-item .timeline-content:before, #timeline .timeline-item .timeline-content.right:before {
+  #timeline .timeline-item .timeline-content:before,
+  #timeline .timeline-item .timeline-content.right:before {
     left: 10%;
     margin-left: -6px;
     border-left: 0;
