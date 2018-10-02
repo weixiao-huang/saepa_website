@@ -7,7 +7,7 @@
       .aboutUs
         .aboutTitle.
           {{ aboutus.title }}<br>—
-        .aboutContent {{ aboutus.text }}
+        .aboutContent(v-html="aboutus.text")
       .icon_container
         .icon_box(v-for="item in aboutus.list")
           img(:src="item.url", :alt="item.alt")

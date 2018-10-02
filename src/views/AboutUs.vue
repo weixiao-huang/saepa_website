@@ -10,24 +10,23 @@
         项目中心
       .line |
       ul
-        li 周末支教
-        li 梦想课堂
-        li 电脑传爱
+        li 周末支教部
+        li 梦想课堂部
+        li 电脑传爱部
         li 创新工作室
     .group
       .circle.
         对外交<br>流中心
       .line |
       ul
-        li 设计工作室
-        li 外宣部
+        li 对外联系与宣传设计部
     .group
       .circle.
         人力资<br>源中心
       .line |
       ul
         li 人力资源部
-        li 撒爱工作室
+        li 撒爱办公室
 </template>
 
 
