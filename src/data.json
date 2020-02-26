@@ -274,7 +274,7 @@
       {
         "title": "联系我们",
         "img": "/img/images/contact/qrcode.jpg",
-        "texts": ["邮箱: saepa_thu@163.com", "微博: 清华SAEPA", "微信公众号：SAEPA", "Copyright © 2018 SAEPA", "<a style=\"color: white;\" href=\"http://www.miitbeian.gov.cn\">京ICP备16062772号</a>"]
+        "texts": ["邮箱: saepa_thu@163.com", "微博: 清华SAEPA", "微信公众号：SAEPA", "Copyright © 2018 SAEPA", "<a style=\"color: white;\" href=\"http://www.beian.miit.gov.cn\">京ICP备16062772号</a>"]
       }
     ]
   }
